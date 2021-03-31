@@ -4,9 +4,10 @@ import search from '../../icons/search.svg'
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 55px;
   padding:5px 10px;
-  box-shadow: 0 4px 2px -2px #ebedf0;
+  box-shadow: 0 8px 6px -6px #cdd0d7;
+  background-color: #fff;
 
 `;
 export const Logo = styled.div`
