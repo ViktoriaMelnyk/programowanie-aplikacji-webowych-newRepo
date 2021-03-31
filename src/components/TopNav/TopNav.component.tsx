@@ -1,41 +1,32 @@
 import React, {FC} from 'react';
 import styled from 'styled-components';
-import { DropdownComp } from './Dropdown.component';
+import homeIcon from '../../icons/house.svg'
+import messagesIcon from '../../icons/comments.svg'
+import bellIcon from '../../icons/bell.svg'
+import search from '../../icons/search.svg'
+import logo from '../../icons/logo.png';
+import { Wrapper, Home, RightIcons, Logo, Icon, IconNoBg, Form, Button, Input} from './styles';
 
-const Wrapper = styled.div`
 
-`
-const InnerWrapper = styled.div`
 
-`
-const Home = styled.div`
 
-`
-const Input = styled.input`
-
-`
-const RightIcons =styled.input`
-
-`
 
 export const TopNav: FC = () =>{
   return(
-
-    <Wrapper>
-        <InnerWrapper>
-           <img src="" alt=""/>
-           <Home>
-                
-                <p>Home</p>  
-            </Home>
-            <DropdownComp/>
-            <Input></Input>
-            <RightIcons>
-                
-            </RightIcons>
-
-        </InnerWrapper>
+    <Wrapper >
+      <IconNoBg><img src={logo} /></IconNoBg>
+      <Home><IconNoBg><img src={homeIcon} /></IconNoBg></Home>
+      <Form>
+        <Input type="text" placeholder = "Search Legalcluster"></Input>
+        <Button type="submit"><img src={search} /></Button>
+      </Form>
+      <RightIcons>
+        <IconNoBg><img src={homeIcon} /></IconNoBg>
+        <Icon><span>7</span></Icon>
+        <Icon><span>7</span></Icon>
+      </RightIcons>
     </Wrapper>
+   
 
   );
 };
