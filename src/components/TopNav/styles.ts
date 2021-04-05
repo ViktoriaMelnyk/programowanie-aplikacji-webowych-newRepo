@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import homeIcon from '../../icons/house.svg'
 import search from '../../icons/search.svg'
+import bell from '../../icons/bell.svg'
+
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -57,13 +59,13 @@ export const Icon = styled.a`
   margin-right: 15px;
   position: relative;
   &::before {
-    content:'';
+    content: url(${bell});
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #a0a0a0;
-    font-size: 14px;
+    width: 40px;
+    height: 40px;
   }
   span {
     background-color: #0381be;

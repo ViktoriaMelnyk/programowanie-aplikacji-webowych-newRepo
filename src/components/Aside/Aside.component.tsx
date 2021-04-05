@@ -10,7 +10,7 @@ export const Aside: FC = () =>{
         <AsideWrapper>
             <AsideItem>
                 <User>
-                    <UserImg><img></img></UserImg>
+                    <UserImg><img/></UserImg>
                     <UserName>Humberta Swift</UserName>
                     <UserJobTitle>Job title - Company</UserJobTitle>
                 </User>
