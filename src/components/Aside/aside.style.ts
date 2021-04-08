@@ -4,14 +4,19 @@ import peopleIcon from '../../icons/people.svg';
 export const AsideWrapper = styled.aside`
   margin-right: 30px;
 `;
-export const AsideItem = styled.div`
-   width: 230px;
-   height: 245px;
-   background-color: #fff;
+export const AsideItem = styled('div') <{bgColor?:string}>`
+   width: 250px;
+   height: 265px;
+   background-color: ${(props) => `${props.bgColor}`};
    margin: 0px 22px;
-   padding: 10px 15px 7px;
+   padding: 10px 20px;
    box-shadow: 0 8px 6px -6px #cdd0d7;
 `;
+export const AsideItemB= styled(AsideItem)`
+   box-shadow:none;
+   height: 150px;
+`;
+
 export const User = styled.div`
     align-items: center;
     text-align: center;
@@ -24,12 +29,6 @@ export const UserImg =styled.a`
  margin-right: 15px;
  background-color: #546e7a;
  border-radius: 50%;
- img{
-   display:block;
-   border-radius: 50%;
-   width: 70px;
-   height: 70px;
- }
 `;
 export const UserName = styled.div`
  padding: 2px;
@@ -47,27 +46,43 @@ export const UserJobTitle = styled.div`
 `;
 export const UserBookmarks = styled.ul`
    border-top: #e0e3e7 1px solid;
-    li{
-        padding: 5px 0px;
+   
+`;
+
+export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, padding?:string , border?:boolean}>`
+        padding-top: ${(props) => `${props.padding}`};
         display: flex;
         justify-content: space-between;
         position: relative;
-        padding-left: 20px;
+        padding-left: 30px;
+        height: 40px;
+        margin: 5px 0px;
         &::before {
-            content: url(${peopleIcon});
+            content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.beforeImgUrl}')`};
             position: absolute;
-            left: -20px;
-            width: 15px;
-            height: 15px;
-            margin: 0px 10px;
+            left: -15px;
+            width: 20px;
+            height: 20px;
+            margin: 0px 5px;
+            cursor:pointer;
         }
         &::after{
-            content: url(${peopleIcon});
+            content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.afterImgUrl}')`};
             position: absolute;
             right: 0px;
-            width: 15px;
-            height: 15px;
-            margin: 0px 10px;
+            top:5px;
+            width: 35px;
+            height:28px;
+            margin: 0px 5px;
+            border: ${(props) =>
+            props.border ? "0.5px solid #000" : "none"};
+            padding:5px;
+            border-radius: 7px;
+            text-align: center;
+            cursor:pointer;
+
         }
         
         a{
@@ -77,29 +92,15 @@ export const UserBookmarks = styled.ul`
             outline: none;
         }
         
-    }
+
 `;
 
 
-export const Bookmarks = styled.ul`
-    width: 230px;
-    height: 130px
-    padding-top: 10px;
-    margin: 0 22px;
+export const Bookmarks = styled(UserBookmarks)`
+    border-top:none;
+
+`;
+
+
+
     
-    li{
-        padding: 10px 0px;
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        padding-left: 20px;
-        
-        a{
-            color: #192136;
-            font-size: 20px;
-            font-weight: 500;
-            outline: none;
-        }
-        
-    }
-`;

@@ -30,12 +30,11 @@ const MainPage: FC = () =>{
   return(
     <Router>
       <Wrapper>
-        <TopNav>
-
-        </TopNav>
+        <TopNav></TopNav>
        <Content>
            <Aside/>
            <Switch>
+             
               <Route path="/PublicationsPage">
                 <PublicationsPage/>
               </Route>

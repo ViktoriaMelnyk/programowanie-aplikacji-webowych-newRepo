@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import homeIcon from '../../icons/house.svg'
-import search from '../../icons/search.svg'
-import bell from '../../icons/bell.svg'
+import logoIcon from '../../icons/logo.png'
+
 
 export const Wrapper = styled.div`
   display: flex;
@@ -14,13 +13,12 @@ export const Wrapper = styled.div`
 `;
 export const Logo = styled.div`
  margin-right: 15px;
- width: 40px;
- height: 40px;
-  img{
-   display:block;
-   width: 35px;
-   height: 35px;
-  }
+ width: 35px;
+ height: 35px;
+ background-image: url('${logoIcon}');
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
 `;
 
 export const Home = styled.div`
@@ -40,35 +38,26 @@ export const RightIcons = styled.div`
 `;
 
 
-export const IconNoBg =styled.a`
- width: 40px;
- height: 40px;
- align-items: center;
- margin-right: 15px;
- img{
-   display:block;
-   width: 35px;
-   height: 35px
- }
-`;
-export const Icon = styled.a`
+
+export const A = styled('a') <{imgUrl: string, bgColor?:string}>`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #e8e8e8;
+  background-color: ${(props) => `${props.bgColor}`};
   margin-right: 15px;
   position: relative;
+  
   &::before {
-    content: url(${bell});
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.imgUrl}')`};
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    cursor:pointer;
   }
   span {
-    background-color: #0381be;
+    background-color:  #0381be;
     position: absolute;
     width: 18px;
     height: 18px;
@@ -78,6 +67,35 @@ export const Icon = styled.a`
     right: -7px;
     top: -7px;
     color: #fff;
+    cursor:pointer;
+  }
+`;
+
+export const DropdownA = styled('a') <{beforeImg: string, afterImg?:string}>`
+  width: 260px;
+  height: 40px;
+  position:relative;
+  display: flex;
+  align-items: flex-start;
+  padding: 8px;
+  padding-left: 50px;
+  cursor: pointer;
+  &::before{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
+    position: absolute;
+    left: 10px;
+  }
+
+  &::after{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.afterImg}')`};
+    position: absolute;
+    top:5px;
+    right: 10px;
+    margin: 0px 5px;
+    cursor:pointer;
+
   }
 `;
 
@@ -96,6 +114,8 @@ export const Input = styled.input`
   border: 1px solid #e0e3e7;
   font-size: 20px;
   font-weight: 100;
+  outline: none;
+  cursor:pointer;
   &::placeholder {
         color: #c3c5c8;
     }
@@ -106,9 +126,19 @@ export const Button = styled.button`
   background-color: transparent;
   right: 0px;
   top: 5px;
+  cursor:pointer;
   img{
     width: 32px;
     height: 32px;
   }
+
+`;
+export const DropdownComp = styled.div`
+  width: 260px;
+  height: 40px;
+  background-color: #e8e8e8;
+  position: relative;
+`;
+export const DropdownWrapper = styled.div`
 
 `;
