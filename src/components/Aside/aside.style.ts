@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import peopleIcon from '../../icons/people.svg';
+
 
 export const AsideWrapper = styled.aside`
   margin-right: 30px;
@@ -22,12 +22,15 @@ export const User = styled.div`
     text-align: center;
     
 `;
-export const UserImg =styled.a`
+export const UserImg =styled('a')<{imgUrl?:string}>`
  width: 70px;
  height: 70px;
- align-items: center;
  margin-right: 15px;
- background-color: #546e7a;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-image:${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.imgUrl}')`};
  border-radius: 50%;
 `;
 export const UserName = styled.div`
@@ -36,7 +39,6 @@ export const UserName = styled.div`
  text-align: center;
  color:#2a3f9d;
  font-size: 20px;
- font-weight: 500;
 `;
 export const UserJobTitle = styled.div`
  padding: 2px;
@@ -71,7 +73,7 @@ export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, paddi
             content: ${(props) =>
     `url('${process.env.PUBLIC_URL}${props.afterImgUrl}')`};
             position: absolute;
-            right: 0px;
+            right: -8px;
             top:5px;
             width: 35px;
             height:28px;
@@ -88,7 +90,6 @@ export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, paddi
         a{
             color: #192136;
             font-size: 18px;
-            font-weight: 500;
             outline: none;
         }
         

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logoIcon from '../../icons/logo.png'
+
 
 
 export const Wrapper = styled.div`
@@ -11,11 +11,12 @@ export const Wrapper = styled.div`
   background-color: #fff;
 
 `;
-export const Logo = styled.div`
+export const Logo = styled('div') <{imgUrl?:string}>`
  margin-right: 15px;
  width: 35px;
  height: 35px;
- background-image: url('${logoIcon}');
+ background-image:  ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.imgUrl}')`};
  background-position: center;
  background-size: cover;
  background-repeat: no-repeat;
@@ -25,7 +26,6 @@ export const Home = styled.div`
   width: 250px;
   height: 40px;
   font-size: 20px;
-  font-weight: 400;
   padding:5px;
   
 `;
@@ -134,9 +134,10 @@ export const Button = styled.button`
 
 `;
 export const DropdownComp = styled.div`
+  margin-left:50px;
   width: 260px;
   height: 40px;
-  background-color: #e8e8e8;
+  background-color: #f5f7f9;
   position: relative;
 `;
 export const DropdownWrapper = styled.div`
