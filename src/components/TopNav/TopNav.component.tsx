@@ -36,7 +36,7 @@ export const TopNav: FC = () =>{
       <RightIcons>
         <A imgUrl = {Icons.homeIcon}></A>
         <A imgUrl = {Icons.commentsIcon} bgColor = '#e8e8e8'><span>7</span></A>
-        <A imgUrl = {Icons.bellIcon} bgColor = '#e8e8e8'><span>13</span></A>
+        <A imgUrl = {Icons.bellIcon} bgColor = '#e8e8e8'><span>9</span></A>
       </RightIcons>
     </Wrapper>
    

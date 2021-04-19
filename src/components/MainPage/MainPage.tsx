@@ -13,6 +13,7 @@ import { TopNav } from '../TopNav/TopNav.component';
 import { PublicationsPage} from '../PublicationsPage/PublicationsPage.component';
 import { EntitiesPage} from '../EntitiesPage/EntitiesPage.component';
 import { EcosystemPage} from '../EcosystemPage/EcosystemPage.component';
+import {LatestPublications} from '../MainContent/LastPublication/LastPublications.component'
 
 const Wrapper = styled.div`
 
@@ -26,6 +27,7 @@ const Content = styled.div`
  width: 100%;
  height: 100vh;
 `;
+
 const MainPage: FC = () =>{
   return(
     <Router>
@@ -33,8 +35,8 @@ const MainPage: FC = () =>{
         <TopNav></TopNav>
        <Content>
            <Aside/>
+           <LatestPublications></LatestPublications>
            <Switch>
-             
               <Route path="/PublicationsPage">
                 <PublicationsPage/>
               </Route>
@@ -44,7 +46,8 @@ const MainPage: FC = () =>{
               <Route path="/EcosystemPage">
                 <EcosystemPage/>
               </Route>
-             </Switch>          
+            </Switch>
+             
         </Content>
       </Wrapper>
 
