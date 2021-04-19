@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import { BigPublicationText, BigPublicationWrapper, BigPublicationInfo } from './LastPublications.styles';
+import { BigPublicationText, BigPublicationWrapper, BigPublicationInfo } from './LatestPublications.styles';
 
 interface IBigPublicationProps {
     imgUrl?: string,

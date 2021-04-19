@@ -13,8 +13,7 @@ import { TopNav } from '../TopNav/TopNav.component';
 import { PublicationsPage} from '../PublicationsPage/PublicationsPage.component';
 import { EntitiesPage} from '../EntitiesPage/EntitiesPage.component';
 import { EcosystemPage} from '../EcosystemPage/EcosystemPage.component';
-import {LatestPublications} from '../MainContent/LastPublication/LastPublications.component'
-
+import { HomePage } from '../HomePage/HomePage.component'
 const Wrapper = styled.div`
 
 
@@ -35,7 +34,7 @@ const MainPage: FC = () =>{
         <TopNav></TopNav>
        <Content>
            <Aside/>
-           <LatestPublications></LatestPublications>
+           
            <Switch>
               <Route path="/PublicationsPage">
                 <PublicationsPage/>
@@ -45,6 +44,9 @@ const MainPage: FC = () =>{
               </Route>
               <Route path="/EcosystemPage">
                 <EcosystemPage/>
+              </Route>
+              <Route path="/HomePage">
+                <HomePage/>
               </Route>
             </Switch>
              

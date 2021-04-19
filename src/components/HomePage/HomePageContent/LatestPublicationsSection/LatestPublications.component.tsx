@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { BigPublication } from './BigPublication.component';
 import { SmallPublication } from './SmallPublication.component';
-import { PublicationsWrapper, SmallPublicationsWrapper} from './LastPublications.styles'
+import { PublicationsWrapper, SmallPublicationsWrapper} from './LatestPublications.styles'
 
 interface IPublications {
     imgUrl: string,

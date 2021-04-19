@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import { UserInfo, PublicationInfo, SmallPublicationsInner, SmallPublicationText, SmallPublImg, PublDate } from './LastPublications.styles';
+import { UserInfo, PublicationInfo, SmallPublicationsInner, SmallPublicationText, SmallPublImg, PublDate } from './LatestPublications.styles';
 
 interface SmallPublicationProps {
     imgUrl: string,
