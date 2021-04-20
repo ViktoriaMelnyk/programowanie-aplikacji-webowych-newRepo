@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const AsideWrapper = styled.aside`
-  margin-right: 30px;
+  margin-left: 30px;
 `;
 export const AsideItem = styled('div') <{bgColor?:string}>`
    width: 250px;

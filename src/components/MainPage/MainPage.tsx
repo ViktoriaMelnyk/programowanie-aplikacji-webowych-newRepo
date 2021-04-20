@@ -19,12 +19,11 @@ const Wrapper = styled.div`
 
 `
 const Content = styled.div`
+ max-width: 900;
  display: flex;
  padding: 18px;
  background-color: #f5f7f9;
- flex-basis: 70%;
- width: 100%;
- height: 100vh;
+
 `;
 
 const MainPage: FC = () =>{
@@ -45,7 +44,7 @@ const MainPage: FC = () =>{
               <Route path="/EcosystemPage">
                 <EcosystemPage/>
               </Route>
-              <Route path="/HomePage">
+              <Route path="/">
                 <HomePage/>
               </Route>
             </Switch>

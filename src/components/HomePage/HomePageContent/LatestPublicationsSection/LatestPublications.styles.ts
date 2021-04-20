@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const PublicationsWrapper = styled.div`
-    width: 900px;
     height: 300px;
     display: flex;
-    margin: 0 auto;
     box-shadow: 0 8px 6px -6px #cdd0d7;
 `;
 export const BigPublicationWrapper = styled.div`
-    width: 300px;
+    width: 350px;
     height: 300px;
     background-repeat: no-repeat;
     background-size:cover;
@@ -18,7 +16,6 @@ export const BigPublicationWrapper = styled.div`
 
 `;
 export const SmallPublicationsWrapper = styled.div`
-    width: 600px;
     height: 300px;
     padding: 11px 20px;
     background-color:#fff;
@@ -37,7 +34,7 @@ export const PublicationInfo = styled('div')``;
 export const BigPublicationInfo = styled('div')`
     position:absolute;
     bottom: 10px;
-    margin: 10px;
+    margin: 15px;
     padding: 7px;
     font-weight: 300;
 `;

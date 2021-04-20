@@ -2,6 +2,7 @@ import React, {FC} from 'react';
 import { BigPublication } from './BigPublication.component';
 import { SmallPublication } from './SmallPublication.component';
 import { PublicationsWrapper, SmallPublicationsWrapper} from './LatestPublications.styles'
+import { Link } from 'react-router-dom';
 
 interface IPublications {
     imgUrl: string,
@@ -62,7 +63,7 @@ export const LatestPublications: FC = () =>{
             <SmallPublicationsWrapper>
                 <p>Latest publications</p>
                 {publications}
-                <a href="">See more publications</a>
+                <Link to ='/PublicationsPage'><a href="">See more publications</a></Link>
             </SmallPublicationsWrapper>
         </PublicationsWrapper>
     );

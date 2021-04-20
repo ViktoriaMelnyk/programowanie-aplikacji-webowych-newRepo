@@ -34,7 +34,7 @@ export const TopNav: FC = () =>{
         <Button type="submit"><img alt ="" src={Icons.searchIcon} /></Button>
       </Form>
       <RightIcons>
-        <Link to = '/HomePage'><A imgUrl = {Icons.homeIcon}></A></Link>
+        <Link to = '/'><A imgUrl = {Icons.homeIcon}></A></Link>
         <A imgUrl = {Icons.commentsIcon} bgColor = '#e8e8e8'><span>7</span></A>
         <A imgUrl = {Icons.bellIcon} bgColor = '#e8e8e8'><span>9</span></A>
       </RightIcons>
