@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {Icons} from '../../../common/Icons'
+import Slider from 'react-slick';
 
 export const WorkspacesTitle = styled.div`
     padding: 25px 0px 15px 40px;
@@ -12,19 +13,18 @@ export const WorkspacesWrapper = styled.div`
     
 `;
 export const WorkspaceItemWrapper = styled.div`
-  width:280px;
-  height: 205px;
-  margin-right:10px;
-  background-color: #fff;
-  box-shadow: 0 8px 6px -6px #cdd0d7;
+    background-color: #fff;
+    width: 218px;
+    box-shadow: 0 8px 6px -6px #cdd0d7;
+    
   
 `;
-export const SliderWrapper = styled.div`
+export const SliderWrapper = styled(Slider)`
     
-   display: flex;
-   height: 309px;
-   padding: 5px 0;
-   overflow-x: hidden;
+    &.slick-slide{
+		outline: none;
+        box-shadow: 0 8px 6px -6px #cdd0d7;
+	}   
    
 `;
 export const BgIcon = styled.div`
