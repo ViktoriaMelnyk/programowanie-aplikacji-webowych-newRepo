@@ -10,10 +10,34 @@ import Icons from '../common/Icons';
 
 import { Wrapper, RightIcons, Logo, Form, Button, Input, DropdownComp, DropdownWrapper, A, DropdownA} from './styles';
 
+// import { useHistory,  useLocation } from "react-router";
+
 
 
 export const TopNav: FC = () =>{
   const [wrapperRef, dropdownOpen, toggleDropdown, closeDropdown] = useDropdown();
+  // const UseHistory = useHistory();
+  // const UseLocation = useLocation();
+  //   UseHistory.listen(() => {
+  //   if (dropdownOpen) toggleDropdown();
+  // });
+
+  //  const activeIcon = (): string => {
+  //   switch (location.pathname.toLowerCase()) {
+  //     case "/":
+  //       return "house.svg";
+  //     case "/PublicationsPage":
+  //       return `${Icons.yourPublicationsIcon}`;
+  //     case "/EntitiesPage":
+  //       return `${Icons.yourPublicationsIcon}`;
+  //     case "/EcosystemPage":
+  //       return `${Icons.yourPublicationsIcon}`;
+  //     default:
+  //       return "";
+  //   }
+  // };
+
+
   return(
     <Wrapper >
       <Logo imgUrl= {Icons.logoIcon}></Logo>

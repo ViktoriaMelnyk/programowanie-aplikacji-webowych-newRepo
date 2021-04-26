@@ -10,10 +10,14 @@ import {
 
 import { Aside } from '../Aside/Aside.component';
 import { TopNav } from '../TopNav/TopNav.component';
-import { PublicationsPage} from '../PublicationsPage/PublicationsPage.component';
-import { EntitiesPage} from '../EntitiesPage/EntitiesPage.component';
-import { EcosystemPage} from '../EcosystemPage/EcosystemPage.component';
-import { HomePage } from '../HomePage/HomePage.component'
+import { PublicationsPage} from '../Pages/PublicationsPage.component';
+import { EntitiesPage} from '../Pages/EntitiesPage.component';
+import { EcosystemPage} from '../Pages/EcosystemPage.component';
+import { PeoplePage} from '../Pages/PeoplePage.component';
+import { AdminPage} from '../Pages/AdminPage.component';
+import { HomePage } from '../HomePage/HomePage.component';
+import { ClientContractPage } from '../Pages/ClientContractPage.component';
+
 const Wrapper = styled.div`
 
 
@@ -38,11 +42,20 @@ const MainPage: FC = () =>{
               <Route path="/PublicationsPage">
                 <PublicationsPage/>
               </Route>
+              <Route path="/AdminPage">
+                <AdminPage/>
+              </Route>
+              <Route path="/PeoplePage">
+                <PeoplePage/>
+              </Route>
               <Route path="/EntitiesPage">
                 <EntitiesPage/>
               </Route>
               <Route path="/EcosystemPage">
                 <EcosystemPage/>
+              </Route>
+              <Route path="/ClientContractPage">
+                <ClientContractPage/>
               </Route>
               <Route path="/">
                 <HomePage/>
