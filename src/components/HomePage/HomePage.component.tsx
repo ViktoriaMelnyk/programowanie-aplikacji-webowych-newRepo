@@ -2,12 +2,10 @@ import React, {FC} from 'react';
 import styled from 'styled-components';
 import { LatestPublications } from './HomePageContent/LatestPublicationsSection/LatestPublications.component';
 import { Workspaces } from './HomePageContent/WorkspacesSection/Workspaces.component';
-
 const HomePageWrapper= styled.div`
   max-width: 930px;
   padding: 0px 15px;
   margin: 0 auto;
-  height : 100vh;
 `;
 
 export const HomePage: FC = () =>{

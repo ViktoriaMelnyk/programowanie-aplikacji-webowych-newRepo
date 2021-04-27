@@ -6,10 +6,9 @@ export const AsideWrapper = styled.aside`
 `;
 export const AsideItem = styled('div') <{bgColor?:string}>`
    width: 250px;
-   height: 265px;
    background-color: ${(props) => `${props.bgColor}`};
    margin: 0px 22px;
-   padding: 10px 20px;
+   padding: 20px 20px;
    box-shadow: 0 8px 6px -6px #cdd0d7;
 `;
 export const AsideItemB= styled(AsideItem)`
@@ -58,7 +57,7 @@ export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, paddi
         position: relative;
         padding-left: 30px;
         height: 40px;
-        margin: 5px 0px;
+        margin-top: 5px;
         &::before {
             content: ${(props) =>
     `url('${process.env.PUBLIC_URL}${props.beforeImgUrl}')`};
@@ -73,7 +72,7 @@ export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, paddi
             content: ${(props) =>
     `url('${process.env.PUBLIC_URL}${props.afterImgUrl}')`};
             position: absolute;
-            right: -8px;
+            right: -12px;
             top:5px;
             width: 35px;
             height:28px;

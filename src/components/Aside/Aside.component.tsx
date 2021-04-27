@@ -1,7 +1,8 @@
 import React, {FC} from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
+import {useSelector} from 'react-redux';
+import {IState} from '../reducers';
+import {IUsersReducer} from '../reducers/usersReducers';
 import Icons from '../common/Icons';
 
 
@@ -10,13 +11,20 @@ import { AsideItem, AsideItemB,AsideWrapper, Bookmarks, User, UserBookmarks,Li, 
 
 
 export const Aside: FC = () =>{
+    const{ usersList } = useSelector<IState, IUsersReducer>(globalState => ({
+        ...globalState.users
+    }));
+
+
     return(
         <AsideWrapper>
+            {console.log({usersList})}
+
             <AsideItem bgColor = "white">
                 <User>
                     <UserImg imgUrl = {Icons.userIcon}></UserImg>
-                    <UserName>Humbert Swift</UserName>
-                    <UserJobTitle>Job title - Company</UserJobTitle>
+                    <UserName>{usersList[Math.floor(Math.random() * 10)]?.name}</UserName>
+                    <UserJobTitle>{usersList[Math.floor(Math.random() * 10)]?.company.catchPhrase} - {usersList[Math.floor(Math.random() * 10)]?.company.name}</UserJobTitle>
                 </User>
                 <UserBookmarks>
                     <Li beforeImgUrl ={Icons.userPlusIcon} afterImgUrl = {Icons.userPlusIcon} padding = '10px' border><Link to="/EntitiesPage">Your Network</Link></Li>

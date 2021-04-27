@@ -10,32 +10,47 @@ import Icons from '../common/Icons';
 
 import { Wrapper, RightIcons, Logo, Form, Button, Input, DropdownComp, DropdownWrapper, A, DropdownA} from './styles';
 
-// import { useHistory,  useLocation } from "react-router";
+import { useLocation } from "react-router";
 
 
 
 export const TopNav: FC = () =>{
   const [wrapperRef, dropdownOpen, toggleDropdown, closeDropdown] = useDropdown();
-  // const UseHistory = useHistory();
-  // const UseLocation = useLocation();
-  //   UseHistory.listen(() => {
-  //   if (dropdownOpen) toggleDropdown();
-  // });
+  const UseLocation = useLocation();
+  
 
-  //  const activeIcon = (): string => {
-  //   switch (location.pathname.toLowerCase()) {
-  //     case "/":
-  //       return "house.svg";
-  //     case "/PublicationsPage":
-  //       return `${Icons.yourPublicationsIcon}`;
-  //     case "/EntitiesPage":
-  //       return `${Icons.yourPublicationsIcon}`;
-  //     case "/EcosystemPage":
-  //       return `${Icons.yourPublicationsIcon}`;
-  //     default:
-  //       return "";
-  //   }
-  // };
+   const icon = (): string => {
+    switch (UseLocation.pathname) {
+      case "/":
+        return `${Icons.blackHouseIcon}`;
+      case "/PublicationsPage":
+        return `${Icons.yourPublicationsIcon}`;
+      case "/EntitiesPage":
+        return `${Icons.entities2Icon}`;
+      case "/PeoplePage":
+        return `${Icons.peopleIcon}`;
+      case "/AdminPage":
+        return `${Icons.adminIcon}`;
+      default:
+        return "";
+    }
+  };
+    const text = (): string => {
+    switch (UseLocation.pathname) {
+      case "/":
+        return "Home";
+      case "/PublicationsPage":
+        return "Publications";
+      case "/EntitiesPage":
+        return "Entities";
+      case "/PeoplePage":
+        return "People";
+      case "/AdminPage":
+        return "Administration";
+      default:
+        return "";
+    }
+  };
 
 
   return(
@@ -45,8 +60,8 @@ export const TopNav: FC = () =>{
         <DropdownComp>
           <DropdownWrapper ref={wrapperRef}>
           
-            <DropdownA beforeImg = {Icons.blackHouseIcon} afterImg = {Icons.arrowDownIcon} onClick={toggleDropdown}>
-              Home
+            <DropdownA beforeImg = {icon()} afterImg = {Icons.arrowDownIcon} onClick={toggleDropdown}>
+              {text()}
             </DropdownA>
         
            {dropdownOpen && <CircleMenu />}

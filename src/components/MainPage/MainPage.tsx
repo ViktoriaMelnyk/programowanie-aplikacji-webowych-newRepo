@@ -1,4 +1,5 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import styled from 'styled-components';
 
 import {
@@ -18,6 +19,10 @@ import { AdminPage} from '../Pages/AdminPage.component';
 import { HomePage } from '../HomePage/HomePage.component';
 import { ClientContractPage } from '../Pages/ClientContractPage.component';
 
+import {getUsers} from '../../actions/actionsTypes/usersActions';
+
+type GetUsers = ReturnType<typeof getUsers>
+
 const Wrapper = styled.div`
 
 
@@ -27,10 +32,15 @@ const Content = styled.div`
  display: flex;
  padding: 18px;
  background-color: #f5f7f9;
-
+ height: 100vh;
 `;
 
 const MainPage: FC = () =>{
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch<GetUsers>(getUsers());
+  }, []);
+
   return(
     <Router>
       <Wrapper>

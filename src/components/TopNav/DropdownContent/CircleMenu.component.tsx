@@ -1,16 +1,22 @@
 import React, {ChangeEvent, ChangeEventHandler, FC, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { CircleUl,CircleLi, Filter, Wrapper, Title, ScrollWrapper, LogOut, SeeProfile, UserBox, UserName, UserInfo, UserImage } from './CircleMenu.styles';
-
+import {useSelector} from 'react-redux';
+import {IState} from '../../reducers';
+import {IUsersReducer} from '../../reducers/usersReducers';
 import Icons from '../../common/Icons'
 
 
 export const CircleMenu: FC = () =>{
+    const{ usersList } = useSelector<IState, IUsersReducer>(globalState => ({
+        ...globalState.users
+    }));
+
     const [inputText, setInputText] = useState<string>('');
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
     const text= e.target.value;
     setInputText(text);
-}
+    }
 
 
     return(
@@ -47,7 +53,7 @@ export const CircleMenu: FC = () =>{
                     <UserBox>
                         <UserImage imgUrl = {Icons.userIcon}></UserImage>
                         <UserInfo>
-                            <UserName>Jeanne-Marie de la cli..</UserName>
+                            <UserName>{usersList[Math.floor(Math.random() * 10)]?.name}</UserName>
                             <SeeProfile>See profile</SeeProfile>
                         </UserInfo>
                     </UserBox>
