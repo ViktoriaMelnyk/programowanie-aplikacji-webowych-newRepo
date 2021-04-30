@@ -53,7 +53,7 @@ export const CircleMenu: FC = () =>{
                     <UserBox>
                         <UserImage imgUrl = {Icons.userIcon}></UserImage>
                         <UserInfo>
-                            <UserName>{usersList[Math.floor(Math.random() * 10)]?.name}</UserName>
+                            <UserName>{usersList[1].name}</UserName>
                             <SeeProfile>See profile</SeeProfile>
                         </UserInfo>
                     </UserBox>

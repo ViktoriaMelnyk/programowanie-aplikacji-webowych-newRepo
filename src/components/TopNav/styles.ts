@@ -5,10 +5,11 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 55px;
-  padding:5px 10px;
-  box-shadow: 0 8px 6px -6px #cdd0d7;
+  height: 65px;
+  padding: 12px 15px;
+  box-shadow: 0 8px 6px -6px 	#E8E8E8;
   background-color: #fff;
+  margin-bottom: 5px;
 
 `;
 export const Logo = styled('div') <{imgUrl?:string}>`
@@ -34,18 +35,21 @@ export const RightIcons = styled.div`
   display:flex;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
+  text-align: center;
+
 `;
 
 
 
 export const A = styled('a') <{imgUrl: string, bgColor?:string}>`
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: ${(props) => `${props.bgColor}`};
   margin-right: 15px;
   position: relative;
+  align-items: center;
+  text-align: center;
   
   &::before {
     content: ${(props) =>
@@ -54,6 +58,8 @@ export const A = styled('a') <{imgUrl: string, bgColor?:string}>`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
     cursor:pointer;
   }
   span {
@@ -63,9 +69,10 @@ export const A = styled('a') <{imgUrl: string, bgColor?:string}>`
     height: 18px;
     border-radius: 50%;
     text-align: center;
-    line-height: 18px;
-    right: -7px;
-    top: -7px;
+    line-height: 16px;
+    font-size:13px;
+    right: -6px;
+    top: -6px;
     color: #fff;
     cursor:pointer;
   }
@@ -116,6 +123,7 @@ export const Input = styled.input`
   font-weight: 100;
   outline: none;
   cursor:pointer;
+  
   &::placeholder {
         color: #c3c5c8;
     }
@@ -128,8 +136,8 @@ export const Button = styled.button`
   top: 5px;
   cursor:pointer;
   img{
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
 `;
@@ -137,8 +145,8 @@ export const DropdownComp = styled.div`
   margin-left:50px;
   width: 260px;
   height: 40px;
-  background-color: #f5f7f9;
   position: relative;
+  box-shadow: 0 8px 6px -6px 	#E8E8E8;
 `;
 export const DropdownWrapper = styled.div`
 

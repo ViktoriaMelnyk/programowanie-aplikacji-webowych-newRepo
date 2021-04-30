@@ -24,15 +24,16 @@ import {getUsers} from '../../actions/actionsTypes/usersActions';
 type GetUsers = ReturnType<typeof getUsers>
 
 const Wrapper = styled.div`
-
-
-`
+ background-color: #f5f7f9;
+ height: 100vh;
+ 
+`;
 const Content = styled.div`
  max-width: 900;
  display: flex;
  padding: 18px;
  background-color: #f5f7f9;
- height: 100vh;
+
 `;
 
 const MainPage: FC = () =>{

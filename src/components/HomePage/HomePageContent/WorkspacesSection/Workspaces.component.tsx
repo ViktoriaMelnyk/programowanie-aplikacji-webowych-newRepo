@@ -31,6 +31,22 @@ const workspacesContent: IWorkspaces[] = [
         apdateDay: 3,
     },
     {
+        BgimgUrl: 'https://picsum.photos/id/258/200',
+        IconUrl: `${Icons.bookIcon}`,
+        text: 'Supplier Contract',
+        smallText:'Contract',
+        usersNum: 150,
+        apdateDay: 2,
+    },
+    {
+        BgimgUrl: 'https://picsum.photos/id/258/200',
+        IconUrl: `${Icons.bookIcon}`,
+        text: 'Supplier Contract',
+        smallText:'Contract',
+        usersNum: 150,
+        apdateDay: 2,
+    },
+    {
         BgimgUrl: 'https://picsum.photos/200',
         IconUrl: `${Icons.bookIcon}`,
         text: 'Corporate',

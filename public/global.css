@@ -2,10 +2,15 @@ html {
     box-sizing: border-box;
 }
 
-html, body {
+body {
     position: relative;
-    max-width: 100%;
     overflow-x: hidden;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
 *, *::before, *::after {
@@ -27,10 +32,3 @@ ul, li {
     list-style: none;
 }
 
-body {
-    overflow-x: hidden;
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 400;
-    font-family: 'Roboto', sans-serif;
-}

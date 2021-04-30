@@ -9,12 +9,12 @@ export const Wrapper = styled.div`
     top: auto;
     left: 0px;
     overflow: hidden;
-    border: 2px solid #e0e0e0;
     border-top:none;
     transition: all 0.7s;
     z-index: 1;
     background-color: #fff;
     align-items: center;
+    box-shadow: 0 8px 6px -6px 	#E8E8E8;
 
 `;
 export const ScrollWrapper = styled.div`
@@ -91,7 +91,8 @@ export const LogOut = styled.div`
     display: flex;
     align-items: center;
     background-color: #fff;
-    border: 1px solid #e8e8e8;
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
     text-align: center;
     justify-content: center;
     color: #878b91;

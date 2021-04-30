@@ -13,18 +13,21 @@ export const WorkspacesWrapper = styled.div`
     
 `;
 export const WorkspaceItemWrapper = styled.div`
-    background-color: #fff;
-    width: 218px;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
-    
-  
+
 `;
 export const SliderWrapper = styled(Slider)`
     
-    &.slick-slide{
-		outline: none;
-        box-shadow: 0 8px 6px -6px #cdd0d7;
-	}   
+    .slick-slide {
+    background-color: #fff;
+    outline: none;
+    margin-right: 15px;
+    box-shadow: 0 8px 6px -6px #cdd0d7;
+    
+    }
+    .slick-list {
+    max-height: 220px;
+    }
+
    
 `;
 export const BgIcon = styled.div`
@@ -97,6 +100,6 @@ export const Users = styled.div`
 `;
 export const Update = styled.div`
     font-size: 12px;
-    padding: 2px 50px 0px 0px;
+    /* padding: 2px 50px 0px 0px; */
 `;
 
