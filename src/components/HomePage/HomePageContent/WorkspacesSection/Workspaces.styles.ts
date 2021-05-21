@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {Icons} from '../../../common/Icons'
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 
 export const WorkspacesTitle = styled.div`
     padding: 25px 0px 15px 40px;
@@ -59,9 +60,11 @@ export const SmallIcon = styled.div`
     }
 
 `;
-export const Text = styled.div`
+export const WorkspacesText = styled(Link)`
     padding: 0px 0px 20px 85px;
     font-weight: 500;
+    outline: none;
+    color: #2a3f9d;
 `;
 export const SmallContentInner = styled.div`
     display: flex;

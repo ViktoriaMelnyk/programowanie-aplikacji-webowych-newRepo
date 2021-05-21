@@ -36,3 +36,29 @@ export const CommentsWrapper = styled.div`
     width: 900px;
     margin:10px 0;
 `;
+
+export const PaginationWrapper = styled.div`
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+  width: 100%;
+
+  margin-top: 0.5rem;
+  .page {
+    color:#2a3f9d;
+    font-weight: 600;
+    margin-right: 5px;
+    min-width: 32px;
+    padding: 3px 6px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .page.active {
+      background-color: #fff;
+      border: 1px solid #2a3f9d;
+    }
+`;
+
+

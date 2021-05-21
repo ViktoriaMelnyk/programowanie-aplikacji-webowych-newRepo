@@ -11,10 +11,16 @@ import Icons from '../common/Icons';
 import { Wrapper, RightIcons, Logo, Form, Button, Input, DropdownComp, DropdownWrapper, A, DropdownA} from './styles';
 
 import { useLocation } from "react-router";
+import usersReducers from '../reducers/usersReducers';
 
+interface IDropDownUser{
+  user:{
+      name: string;
+      imgUrl:string;
+  }
+}
 
-
-export const TopNav: FC = () =>{
+export const TopNav: FC <IDropDownUser> = props =>{
   const [wrapperRef, dropdownOpen, toggleDropdown, closeDropdown] = useDropdown();
   const UseLocation = useLocation();
   
@@ -52,7 +58,7 @@ export const TopNav: FC = () =>{
     }
   };
 
-
+  
   return(
     <Wrapper >
       <Logo imgUrl= {Icons.logoIcon}></Logo>
@@ -64,7 +70,7 @@ export const TopNav: FC = () =>{
               {text()}
             </DropdownA>
         
-           {dropdownOpen && <CircleMenu />}
+           {dropdownOpen && <CircleMenu name = {props.user.name} imgUrl = {props.user.imgUrl}/>}
           </DropdownWrapper>
         </DropdownComp>
       

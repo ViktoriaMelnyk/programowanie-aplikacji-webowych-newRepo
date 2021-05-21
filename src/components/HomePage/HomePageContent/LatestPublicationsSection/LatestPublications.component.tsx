@@ -3,67 +3,95 @@ import { BigPublication } from './BigPublication.component';
 import { SmallPublication } from './SmallPublication.component';
 import { PublicationsWrapper, SmallPublicationsWrapper} from './LatestPublications.styles'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { IState } from '../../../reducers';
+import { IPhotoReducer } from '../../../reducers/photoReducers';
+import { IPostsReducer } from '../../../reducers/postsReducers';
+import { IUsersReducer } from '../../../reducers/usersReducers';
+import { ISingleUser } from '../../../entities/users';
+import Icons from '../../../common/Icons';
 
-interface IPublications {
-    imgUrl: string,
-    text: string,
-    userName: string,
-    date: string,
+
+
+interface IPublication{
+  id: number,
+
 }
-
-const publicationsContent: IPublications[] = [
-    {
-    imgUrl: 'https://picsum.photos/id/258/200',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-    userName:'John Doe',
-    date: '07 Jan 2020',
-    },
-    {
-        imgUrl: 'https://picsum.photos/200',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName: 'John Doe',
-        date: '07 Jan 2020',
-    },
-    {
-        imgUrl: 'https://picsum.photos/200',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName: 'John Doe',
-        date: '07 Jan 2020',
-    },
-    {
-        imgUrl: 'https://picsum.photos/200',
-        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit... and one more line for the demo',
-        userName: 'John Doe',
-        date: '07 Jan 2020',
-    },
+export const LatestPublications: FC <IPublication>= props =>{
+    const { photoList }= useSelector<IState, IPhotoReducer>(globalState => ({
+        ...globalState.photos
+      }))
     
-];
+     const { postsList }= useSelector<IState, IPostsReducer>(globalState => ({
+        ...globalState.posts
+      }))
+    const { usersList }= useSelector<IState, IUsersReducer>(globalState => ({
+        ...globalState.users
+      }))
 
-export const LatestPublications: FC = () =>{
-    const publications = publicationsContent
-    .slice(1,4)
-    .map((publication, index) =>(
-        <SmallPublication
-            key = {index}
-            imgUrl = {publication.imgUrl}
-            text = {publication.text}
-            userName = {publication.userName}
-            date = {publication.date}
+    function userPhoto(user : ISingleUser)  {
+        for (let i = 0; i < photoList.length; i++) {
+          const j = photoList[i];
+          if(j.id===user.id){
+            return j.url
+          }
+        }
+        return `${Icons.userIcon}`;
+    }
+    function postPhoto(user : ISingleUser)  {
+      if(user !== undefined){
+        for (let i = 0; i < photoList.length; i++) {
+          const j = photoList[i];
+          if(j.id===user.id){
+             return j.url
+          }
+        }
+      }
+        return 'https://picsum.photos/id/258/200';
+    }
+    function postBody(user : ISingleUser)  {
+      if(user !== undefined){      
+        for (let i = 0; i < postsList.length; i++) {
+          const post = postsList[i];
+          if(post.userId===user.id){
+            return post.body.slice(0,65);
+          }
+        } 
+      }
 
-        />
-    ));
+      
+    }
+
+
+    const PostAuthor1 = usersList[2];
+    const PostAuthor2 = usersList[7];
+    const PostAuthor3 = usersList[2];
+    const PostAuthor4 = usersList[1];
     return(
         <PublicationsWrapper>
             <BigPublication
-                imgUrl = {publicationsContent[0].imgUrl}
-                text = {publicationsContent[0].text}
-                userName = {publicationsContent[0].userName}
-                date = {publicationsContent[0].date}
+                imgUrl = {photoList? postPhoto(PostAuthor1):'https://picsum.photos/id/258/200'}
+                text = {postsList? postBody(PostAuthor1):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                name = {PostAuthor1? PostAuthor1.name :""}
             />
             <SmallPublicationsWrapper>
                 <p>Latest publications</p>
-                {publications}
-                <Link to ='/PublicationsPage'><a href="">See more publications</a></Link>
+                <SmallPublication 
+                imgUrl = {photoList? postPhoto(PostAuthor2):'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor2):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor2? PostAuthor2.name :""}
+                />
+                <SmallPublication 
+                imgUrl = {photoList?postPhoto(PostAuthor3):'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor3):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor3? PostAuthor3.name :""}
+                />
+                <SmallPublication 
+                imgUrl = {photoList?postPhoto(PostAuthor4) :'https://picsum.photos/id/258/200'}
+                text = {postsList?postBody(PostAuthor4):"Lorem ipsum dolor sit amet, consectetur adipisicing elit."}
+                userName = {PostAuthor4? PostAuthor4.name :""}
+                />
+                <Link to ='/PublicationsPage'>See more publications</Link>
             </SmallPublicationsWrapper>
         </PublicationsWrapper>
     );

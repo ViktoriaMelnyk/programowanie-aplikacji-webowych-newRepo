@@ -19,9 +19,21 @@ import { AdminPage} from '../Pages/AdminPage.component';
 import { HomePage } from '../HomePage/HomePage.component';
 import { ClientContractPage } from '../Pages/ClientContractPage.component';
 
-import {getUsers} from '../../actions/actionsTypes/usersActions';
+import {getUsers} from '../../actions/usersActions';
+import {getPhotos} from '../../actions/photoActions';
+import {getPosts} from '../../actions/postsActions';
+import {getComments} from '../../actions/commentsActions';
+import {useSelector} from 'react-redux';
+import {IState} from '../reducers';
+import {IUsersReducer} from '../reducers/usersReducers';
+import {IPhotoReducer} from '../reducers/photoReducers';
+import {ISingleUser} from '../entities/users';
+import { Icons } from '../common/Icons';
 
 type GetUsers = ReturnType<typeof getUsers>
+type GetPhotos = ReturnType<typeof getPhotos>;
+type GetPosts = ReturnType<typeof getPosts>;
+type GetComments = ReturnType<typeof getComments>;
 
 const Wrapper = styled.div`
  background-color: #f5f7f9;
@@ -40,14 +52,43 @@ const MainPage: FC = () =>{
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch<GetUsers>(getUsers());
+    dispatch<GetPhotos>(getPhotos());
+    dispatch<GetPosts>(getPosts());
+    dispatch<GetComments>(getComments());
   }, []);
+  const{ usersList } = useSelector<IState, IUsersReducer>(globalState => ({
+    ...globalState.users
+ }));
+ const{ photoList } = useSelector<IState, IPhotoReducer>(globalState => ({
+    ...globalState.photos
+ }));
+
+ const UsersList = usersList[Math.floor(Math.random() * 9)]
+ 
+ function userPhoto(user : ISingleUser)  {
+  for (let i = 0; i < photoList.length; i++) {
+    const j = photoList[i];
+    if(j.id===user.id){
+       return j.url
+    }
+  }
+  return "";
+ }
+ const User = {
+   id: UsersList? UsersList.id: 0,
+   name: UsersList? UsersList.name : "NoName",
+   jobTitle:UsersList? UsersList.company.catchPhrase : 'NoJobTitle',
+   companyName: UsersList? UsersList.company.name : 'NoJobCompany',
+   imgUrl:UsersList? userPhoto(UsersList) : `${Icons.userIcon}`
+ }
+
 
   return(
     <Router>
       <Wrapper>
-        <TopNav></TopNav>
+        <TopNav user = {User}></TopNav>
        <Content>
-           <Aside/>
+           <Aside user = {User}/>
            
            <Switch>
               <Route path="/PublicationsPage">
@@ -69,7 +110,7 @@ const MainPage: FC = () =>{
                 <ClientContractPage/>
               </Route>
               <Route path="/">
-                <HomePage/>
+                <HomePage user = {User}/>
               </Route>
             </Switch>
              

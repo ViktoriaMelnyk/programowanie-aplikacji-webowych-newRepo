@@ -1,30 +1,33 @@
 import React, {FC} from 'react';
 import { Link } from 'react-router-dom';
-import {useSelector} from 'react-redux';
-import {IState} from '../reducers';
-import {IUsersReducer} from '../reducers/usersReducers';
 import Icons from '../common/Icons';
+
 
 
 
 import { AsideItem, AsideItemB,AsideWrapper, Bookmarks, User, UserBookmarks,Li, UserImg, UserJobTitle, UserName} from './aside.style';
 
+interface IAsideUser {
+    user: {
+        name:string,
+        imgUrl:string,
+        jobTitle: string,
+        companyName: string
+    }
 
-export const Aside: FC = () =>{
-    const{ usersList } = useSelector<IState, IUsersReducer>(globalState => ({
-        ...globalState.users
-    }));
+}
+export const Aside: FC<IAsideUser>= props =>{
+
 
 
     return(
         <AsideWrapper>
-            {console.log({usersList})}
 
             <AsideItem bgColor = "white">
                 <User>
-                    <UserImg imgUrl = {Icons.userIcon}></UserImg>
-                    <UserName>{usersList[Math.floor(Math.random() * 10)]?.name}</UserName>
-                    <UserJobTitle>{usersList[Math.floor(Math.random() * 10)]?.company.catchPhrase} - {usersList[Math.floor(Math.random() * 10)]?.company.name}</UserJobTitle>
+                    <UserImg imgUrl = {props.user.imgUrl}></UserImg>
+                    <UserName>{props.user.name}</UserName>
+                    <UserJobTitle> {props.user.jobTitle} - {props.user.companyName}</UserJobTitle>
                 </User>
                 <UserBookmarks>
                     <Li beforeImgUrl ={Icons.userPlusIcon} afterImgUrl = {Icons.userPlusIcon} padding = '10px' border><Link to="/EntitiesPage">Your Network</Link></Li>

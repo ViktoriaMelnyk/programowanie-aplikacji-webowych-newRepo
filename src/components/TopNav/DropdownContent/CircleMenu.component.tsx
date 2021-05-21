@@ -1,16 +1,18 @@
 import React, {ChangeEvent, ChangeEventHandler, FC, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { CircleUl,CircleLi, Filter, Wrapper, Title, ScrollWrapper, LogOut, SeeProfile, UserBox, UserName, UserInfo, UserImage } from './CircleMenu.styles';
-import {useSelector} from 'react-redux';
-import {IState} from '../../reducers';
-import {IUsersReducer} from '../../reducers/usersReducers';
+
 import Icons from '../../common/Icons'
 
 
-export const CircleMenu: FC = () =>{
-    const{ usersList } = useSelector<IState, IUsersReducer>(globalState => ({
-        ...globalState.users
-    }));
+interface ICircleMenu{
+    name: string,
+    imgUrl: string;
+}
+
+
+export const CircleMenu: FC <ICircleMenu>=props=>{
+
 
     const [inputText, setInputText] = useState<string>('');
     const inputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
@@ -51,9 +53,9 @@ export const CircleMenu: FC = () =>{
             <Title>Account</Title>
              <CircleUl>
                     <UserBox>
-                        <UserImage imgUrl = {Icons.userIcon}></UserImage>
+                        <UserImage imgUrl = {props.imgUrl}></UserImage>
                         <UserInfo>
-                            <UserName>{usersList[1].name}</UserName>
+                            <UserName>{props.name}</UserName>
                             <SeeProfile>See profile</SeeProfile>
                         </UserInfo>
                     </UserBox>

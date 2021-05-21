@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import { BgIcon, Content, MiniIcon, SmallContentInner, SmallIcon, SmallText,Text, Update, Users, WorkspaceItemWrapper } from './Workspaces.styles'
-
+import { BgIcon, Content, MiniIcon, SmallContentInner, SmallIcon, SmallText,WorkspacesText, Update, Users, WorkspaceItemWrapper } from './Workspaces.styles'
+import {Link} from 'react-router-dom';
 interface IWorkspaceItemProps {
     BgimgUrl: string,
     IconUrl: string,
@@ -8,16 +8,17 @@ interface IWorkspaceItemProps {
     smallText: string,
     usersNum: number,
     apdateDay: number,
+    link: string;
 }
 export const WorkspaceItem: FC<IWorkspaceItemProps> = (props) =>{
-    const {BgimgUrl,IconUrl, text,smallText,usersNum,apdateDay} = props;
+    const {BgimgUrl,IconUrl, text,smallText,usersNum,apdateDay, link} = props;
     return(
         <WorkspaceItemWrapper>
             <BgIcon style = {{backgroundImage: `url(${BgimgUrl})`}}/>
             <Content>
                
                 <SmallIcon><img src = {IconUrl}/></SmallIcon>
-                <Text>{text}</Text>
+                <WorkspacesText to = {link}>{text}</WorkspacesText>
                 <SmallContentInner>
                     <MiniIcon style = {{backgroundImage: `url(${IconUrl})`}}/>
                     <SmallText>{smallText}</SmallText>

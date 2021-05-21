@@ -4,17 +4,16 @@ import { BigPublicationText, BigPublicationWrapper, BigPublicationInfo } from '.
 interface IBigPublicationProps {
     imgUrl?: string,
     text?: string,
-    userName?: string,
-    date?: string,
+    name?: string,
 };
 export const BigPublication: FC<IBigPublicationProps> = (props) =>{
-    const {imgUrl, text, userName,date} = props;
+    const {imgUrl, text, name} = props;
     return(
         <BigPublicationWrapper style = {{backgroundImage: `url(${imgUrl})`}}>
             
             <BigPublicationInfo>
                 <BigPublicationText>{text}</BigPublicationText>
-                {date} {userName}
+               <span>07 Jan 2020</span> {name}
             </BigPublicationInfo>
             
         </BigPublicationWrapper>

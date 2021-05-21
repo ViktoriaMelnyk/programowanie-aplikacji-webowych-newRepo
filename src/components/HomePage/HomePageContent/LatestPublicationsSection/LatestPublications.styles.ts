@@ -37,6 +37,9 @@ export const BigPublicationInfo = styled('div')`
     margin: 15px;
     padding: 7px;
     font-weight: 300;
+    span{
+        padding-right: 10px;
+    }
 `;
 
 

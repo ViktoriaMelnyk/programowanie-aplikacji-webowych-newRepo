@@ -1,4 +1,5 @@
 import React, {FC} from 'react';
+import Icons from '../../../common/Icons';
 import {SmallIcon, SmallText, Update} from '../WorkspacesSection/Workspaces.styles'
 import { SingleCommentInner, SingleCommentTitle, SingleCommentText, CommentInfo, ComIcon } from './CommentsSection.styles';
 
@@ -6,13 +7,14 @@ interface ISingleCommentProps {
     title: string,
     text: string,
     companyName: string,
-    commentType:string,
+    commentType: string,
     smallIcon: string,
     logo:string,
     date: number,
+    userName:string,
 }
 export const SingleComment: FC<ISingleCommentProps> = (props) =>{
-    const {title, text, companyName,commentType,smallIcon,logo, date} = props;
+    const {title, text, companyName, commentType,smallIcon,logo,date,userName} = props;
     return(
         <SingleCommentInner>
            <SingleCommentTitle>{title}</SingleCommentTitle>
@@ -22,7 +24,7 @@ export const SingleComment: FC<ISingleCommentProps> = (props) =>{
                 <SmallText>{companyName}</SmallText>
                 <ComIcon style = {{backgroundImage: `url(${smallIcon})`}}></ComIcon>
                 <SmallText>{commentType}</SmallText>
-                <Update style={{fontSize: "14px"}}>Last update {date} days ago</Update>
+                <Update style={{fontSize: "14px"}}>Last update {date} days ago by {userName}</Update>
             </CommentInfo>
         </SingleCommentInner>
         

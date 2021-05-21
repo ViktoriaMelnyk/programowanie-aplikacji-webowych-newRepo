@@ -11,6 +11,7 @@ interface IWorkspaces {
     smallText: string,
     usersNum: number,
     apdateDay: number,
+    link: string,
 }
 
 const workspacesContent: IWorkspaces[] = [
@@ -21,6 +22,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/client-contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/4/200',
@@ -29,6 +31,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 22,
         apdateDay: 3,
+        link: '/workspaces/client-contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -37,6 +40,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/supplier-contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -45,6 +49,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/supplier-contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/200',
@@ -53,6 +58,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 15,
         apdateDay: 22,
+        link: '/workspaces/corporate',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -61,6 +67,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -69,6 +76,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/contract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -77,6 +85,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
+        link: '/workspaces/contract',
     },
     
 ];
@@ -102,7 +111,7 @@ export const Workspaces: FC = () =>{
             smallText = {workspace.smallText}
             usersNum = {workspace.usersNum}
             apdateDay = {workspace.apdateDay}
-
+            link = {workspace.link}
         />
     ));
     return(
