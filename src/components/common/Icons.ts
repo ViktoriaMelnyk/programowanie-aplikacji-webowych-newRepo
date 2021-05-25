@@ -20,6 +20,14 @@ import contractIcon from './icons/edit-regular.svg';
 import privacyIcon from './icons/privacy.svg';
 import settingsIcon from './icons/settings.svg';
 import userIcon from './icons/man.svg';
+import messageIcon from './icons/message.svg';
+import requestIcon from './icons/request.svg';
+import suitcaseIcon from './icons/suitcase.svg';
+import closeIcon from './icons/close.svg';
+import editIcon from './icons/edit.svg';
+
+
+
 
 
 export const Icons ={
@@ -45,7 +53,11 @@ export const Icons ={
  privacyIcon,
  settingsIcon,
  userIcon,
-
+ messageIcon,
+ requestIcon,
+ suitcaseIcon,
+ editIcon,
+ closeIcon
 };
 
 export default Icons;

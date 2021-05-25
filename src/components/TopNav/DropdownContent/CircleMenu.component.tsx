@@ -56,7 +56,7 @@ export const CircleMenu: FC <ICircleMenu>=props=>{
                         <UserImage imgUrl = {props.imgUrl}></UserImage>
                         <UserInfo>
                             <UserName>{props.name}</UserName>
-                            <SeeProfile>See profile</SeeProfile>
+                            <SeeProfile to = '/ProfilePage'>See profile</SeeProfile>
                         </UserInfo>
                     </UserBox>
                     <CircleLi beforeImgUrl ={Icons.privacyIcon}  padding = '0px' ><a href="#">Privacy</a></CircleLi>

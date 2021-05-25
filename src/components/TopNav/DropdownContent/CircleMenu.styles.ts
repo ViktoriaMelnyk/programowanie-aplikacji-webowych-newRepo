@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Li, UserBookmarks, UserImg } from '../../Aside/aside.style';
 import { Input } from '../styles';
 import Icons from '../../common/Icons'; 
+import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
     width: 260px;
@@ -82,7 +83,7 @@ export const UserInfo = styled.div`
 export const UserName = styled.div`
     padding:2px;
 `;
-export const SeeProfile = styled.div`
+export const SeeProfile = styled(Link)`
     color:#7a87c2;
     padding:2px;
 `;

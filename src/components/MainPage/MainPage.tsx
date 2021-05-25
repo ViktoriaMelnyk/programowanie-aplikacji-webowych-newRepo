@@ -18,6 +18,7 @@ import { PeoplePage} from '../Pages/PeoplePage.component';
 import { AdminPage} from '../Pages/AdminPage.component';
 import { HomePage } from '../HomePage/HomePage.component';
 import { ClientContractPage } from '../Pages/ClientContractPage.component';
+import {ProfilePage} from '../Pages/ProfilePage/Profile.component';
 
 import {getUsers} from '../../actions/usersActions';
 import {getPhotos} from '../../actions/photoActions';
@@ -79,7 +80,10 @@ const MainPage: FC = () =>{
    name: UsersList? UsersList.name : "NoName",
    jobTitle:UsersList? UsersList.company.catchPhrase : 'NoJobTitle',
    companyName: UsersList? UsersList.company.name : 'NoJobCompany',
-   imgUrl:UsersList? userPhoto(UsersList) : `${Icons.userIcon}`
+   imgUrl:UsersList? userPhoto(UsersList) : `${Icons.userIcon}`,
+   email: UsersList? UsersList.email : "",
+   phone: UsersList? UsersList.phone : "",
+   city: UsersList? UsersList.address.city : "",
  }
 
 
@@ -108,6 +112,9 @@ const MainPage: FC = () =>{
               </Route>
               <Route path="/ClientContractPage">
                 <ClientContractPage/>
+              </Route>
+              <Route path="/ProfilePage">
+                <ProfilePage user = {User}/>
               </Route>
               <Route path="/">
                 <HomePage user = {User}/>

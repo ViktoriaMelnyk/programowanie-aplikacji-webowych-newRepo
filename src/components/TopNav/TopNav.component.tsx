@@ -37,6 +37,8 @@ export const TopNav: FC <IDropDownUser> = props =>{
         return `${Icons.peopleIcon}`;
       case "/AdminPage":
         return `${Icons.adminIcon}`;
+      case "/ProfilePage":
+        return `${Icons.peopleIcon}`;
       default:
         return "";
     }
@@ -53,6 +55,8 @@ export const TopNav: FC <IDropDownUser> = props =>{
         return "People";
       case "/AdminPage":
         return "Administration";
+      case "/ProfilePage":
+        return "Profile"
       default:
         return "";
     }
