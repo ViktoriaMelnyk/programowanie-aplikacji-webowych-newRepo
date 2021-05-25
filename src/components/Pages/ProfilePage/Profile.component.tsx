@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import { Formik, Field, Form } from "formik";
 import { UserImg } from "../../Aside/aside.style";
 import Icons from "../../common/Icons";
@@ -17,7 +17,9 @@ interface IProfilePage{
     city: string,
   }
 }
-export const ProfilePage: FC <IProfilePage>=props => {
+
+export const ProfilePage: FC <IProfilePage> = props => {
+  const [toggle, setToggle] =useState(true)
     return (
         <ProfileWrapper>
           <ProfileHeader>
@@ -36,30 +38,30 @@ export const ProfilePage: FC <IProfilePage>=props => {
               jobTitle: props.user.jobTitle? props.user.jobTitle: '',
               email: props.user.email? props.user.email: '',
               phone: props.user.phone? props.user.phone: '',
-            }}  onSubmit={(data) => console.log(data)}>
-            <ProfileForm>
+            }}  onSubmit={(data)=> console.log(data) }>
+
+           <ProfileForm >
               <User>
                 <UserPhoto imgUrl = {props.user.imgUrl}/>
                 <SeeProfile>See profile</SeeProfile>
               </User>
               <UserInfo> 
               <LeftSide>                
-                <TextField name="fullName" bold />
-                <TextField name="companyName"bold />
-                <TextField name="location"  />
-                <TextField name="jobTitle"   />
+                <TextField name="fullName" bold= {true} disabled = {toggle}/>
+                <TextField name="companyName"bold= {true}disabled = {toggle}/>
+                <TextField name="location" disabled = {toggle} />
+                <TextField name="jobTitle"disabled = {toggle} />
               </LeftSide>
               <RightSide>
-                <Edit type = 'submit'/>
-                <TextField name="email" />
-                <TextField name="phone"  />
+                <Edit type = 'submit' onClick={() => setToggle((prevToggle => !prevToggle))} />
+                <TextField name="email" disabled = {toggle} />
+                <TextField name="phone"disabled = {toggle} />
               </RightSide>
               </UserInfo>
             </ProfileForm>
             </Formik>
           </UserWrapper>
           <ProfileSectionTwo/>
-
         </ProfileWrapper>
       );
 };

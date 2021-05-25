@@ -9,7 +9,6 @@ export const ProfileWrapper = styled.div`
   padding: 0px 15px;
   margin: 0 auto;
   background-color: #fff;
-  height: 100vh;
   margin-bottom:20px;
 `;
 export const ProfileHeader = styled.div`
@@ -50,7 +49,7 @@ export const UserWrapper = styled.div`
   display:flex;
   justify-content: space-between;
   padding:10px 5px;
-  border-bottom: 1px solid #e0e3e7;
+
 `;
 export const User = styled.div`
   margin: 20px 35px;
