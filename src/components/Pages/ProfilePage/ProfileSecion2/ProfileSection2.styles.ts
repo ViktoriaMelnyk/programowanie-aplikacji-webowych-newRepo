@@ -3,11 +3,12 @@ import { Field, Form } from "formik";
 import Icons from '../../../common/Icons';
 import { Edit } from '../Profile.styles';
 import { UserImg } from '../../../Aside/aside.style';
+import DatePicker from "react-datepicker";
 
 export const BigWrapper = styled.div`
   max-width: 930px;
   width: 100%;
-  margin-bottom:30px;
+  margin-bottom:45px;
   border-top: 1px solid #e0e3e7;
  
 `;
@@ -47,8 +48,19 @@ export const SelectField = styled(Field)`
   border: none;
   padding: 10px;
   background-color: #E6F0F3;
-  display: block;
   font-size: 20px;
+`;
+export const SelectField2 = styled(Field)`
+  display:block;
+  height: fit-content;
+  width:fit-content;
+  border-radius: 0.5rem;
+  border: none;
+  padding-left: 50px;
+  padding: 10px;
+  font-size: 20px;
+  margin:0;
+  color:#4b5268;
 `;
 export const InputField = styled(Field)`
   display:block;
@@ -69,4 +81,36 @@ export const UserPhoto = styled(UserImg)`
   margin-left:7px;
 
 `;
+export const Row = styled.tr`
+    width:100%;
+    justify-content: space-between;
+    display: flex;
+`;
+export const TableTitle = styled.th`
+    padding-top:20px;
+    color:#4b5268;
+    font-size:20px;
+    font-weight: 500;
+`;
+
+export const TableContent = styled.td`
+    font-size: 20px;
+    font-weight: 500;
+    color:#4b5268;
+    width:200px;
+`;
+export const StyledDate = styled(DatePicker)`
+  background:transparent;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  color:#4b5268;
+  text-align: start;
+  padding: 10px 0;
+  max-width:200px;
+
+`;
+
+
 
