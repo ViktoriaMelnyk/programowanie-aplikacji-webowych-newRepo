@@ -12,7 +12,7 @@ import {
 import { Aside } from '../Aside/Aside.component';
 import { TopNav } from '../TopNav/TopNav.component';
 import { PublicationsPage} from '../Pages/PublicationsPage.component';
-import { EntitiesPage} from '../Pages/EntitiesPage.component';
+import { EntitiesPage} from '../Pages/Entities/EntitiesPage.component';
 import { EcosystemPage} from '../Pages/EcosystemPage.component';
 import { PeoplePage} from '../Pages/PeoplePage.component';
 import { AdminPage} from '../Pages/AdminPage.component';

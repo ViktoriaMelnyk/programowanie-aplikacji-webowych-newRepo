@@ -25,6 +25,8 @@ import requestIcon from './icons/request.svg';
 import suitcaseIcon from './icons/suitcase.svg';
 import closeIcon from './icons/close.svg';
 import editIcon from './icons/edit.svg';
+import mosaicIcon from './icons/mosaic.svg';
+import listIcon from './icons/list.svg';
 
 
 
@@ -57,7 +59,9 @@ export const Icons ={
  requestIcon,
  suitcaseIcon,
  editIcon,
- closeIcon
+ closeIcon,
+ mosaicIcon,
+ listIcon
 };
 
 export default Icons;

@@ -47,10 +47,19 @@ export const ProfileSectionTwo: FC = () => {
     firm3:'SVZ',
     amount:'2300',
     amount2:'5600',
-    amount3:'4500'
+    amount3:'4500',
+    cost1:'CS 153',
+    cost2:'CS 42',
+    cost3:'CS 57',
+
     }
     const [date1, setDate1] = useState(new Date(2018, 1, 20))
     const [date2, setDate2] = useState(new Date(2019, 2, 18))
+    const [date3, setDate3] = useState(new Date(2018, 1, 20))
+    const [date4, setDate4] = useState(new Date(2019, 2, 18))
+    const [date5, setDate5] = useState(new Date(2018, 1, 20))
+    const [date6, setDate6] = useState(new Date(2019, 2, 18))
+
     const[information]= useState(data);
 
       function userPhoto(user : ISingleUser)  {
@@ -84,17 +93,39 @@ export const ProfileSectionTwo: FC = () => {
                     propName1: information.propName1?information.propName1:'',
                     propName2:information.propName2?information.propName2:'',
                     propName3:information.propName3?information.propName3:'',
+                    propName4:information.propName1?information.propName1:'',
+                    propName5:information.propName2?information.propName2:'',
+                    propName6:information.propName3?information.propName3:'',
                     ent1:information.ent1?information.ent1:'',
                     ent2:information.ent2?information.ent2:'',
                     ent3:information.ent3?information.ent3:'',
+                    ent4:information.ent1?information.ent1:'',
+                    ent5:information.ent2?information.ent2:'',
+                    ent6:information.ent3?information.ent3:'',
                     location: information.location?information.location:'',
                     exp1: information.exp1?information.exp1:'',
                     firm1:information.firm1?information.firm1:'',
                     firm2:information.firm2?information.firm2:'',
                     firm3:information.firm3?information.firm3:'',
+                    firm4:information.firm1?information.firm1:'',
+                    firm5:information.firm2?information.firm2:'',
+                    firm6:information.firm3?information.firm3:'',
+                    firm7:information.firm1?information.firm1:'',
+                    firm8:information.firm2?information.firm2:'',
+                    firm9:information.firm3?information.firm3:'',
                     amount:information.amount?information.amount:'',
+                    amount1:information.amount3?information.amount3:'',
                     amount2:information.amount2?information.amount2:'',
                     amount3:information.amount3?information.amount3:'',
+                    amount4:information.amount?information.amount:'',
+                    amount5:information.amount2?information.amount2:'',
+                    amount6:information.amount3?information.amount3:'',
+                    cost:information.cost1?information.cost1:'',
+                    cost1:information.cost1?information.cost1:'',
+                    cost2:information.cost2?information.cost2:'',
+                    cost3:information.cost1?information.cost1:'',
+                    cost4:information.cost3?information.cost3:'',
+                    cost5:information.cost1?information.cost1:'',
                 }}
                     onSubmit={(info) => console.log(info)}
             >
@@ -236,7 +267,7 @@ export const ProfileSectionTwo: FC = () => {
                             </SelectField2>
                             </TableContent>
                             <TableContent>
-                                <StyledDate selected={date1} onChange={(date) => setDate1(date as Date)} disabled = {toggle}></StyledDate> 
+                                <StyledDate selected={date3} onChange={(date) => setDate3(date as Date)} disabled = {toggle}></StyledDate> 
                             </TableContent>
                             <TableContent>
                             <InputField name="firm3" disabled = {toggle}/>
@@ -256,10 +287,10 @@ export const ProfileSectionTwo: FC = () => {
                         </Row>
                         <Row>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="propName4" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
-                            <InputField name="ent1" disabled = {toggle}/>
+                            <InputField name="ent4" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
                             <SelectField2 as="select" name="location" disabled = {toggle} >
@@ -272,15 +303,15 @@ export const ProfileSectionTwo: FC = () => {
                             </SelectField2>
                             </TableContent>
                             <TableContent>
-                                <StyledDate selected={date1} onChange={(date) => setDate1(date as Date)} disabled = {toggle}></StyledDate> 
+                                <StyledDate selected={date4} onChange={(date) => setDate4(date as Date)} disabled = {toggle}></StyledDate> 
                             </TableContent>
                         </Row>
                         <Row>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="propName5" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
-                            <InputField name="ent1" disabled = {toggle}/>
+                            <InputField name="ent5" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
                             <SelectField2 as="select" name="location" disabled = {toggle} >
@@ -293,15 +324,15 @@ export const ProfileSectionTwo: FC = () => {
                             </SelectField2>
                             </TableContent>
                             <TableContent>
-                                <StyledDate selected={date1} onChange={(date) => setDate1(date as Date)} disabled = {toggle}></StyledDate> 
+                                <StyledDate selected={date5} onChange={(date) => setDate5(date as Date)} disabled = {toggle}></StyledDate> 
                             </TableContent>
                         </Row>
                         <Row>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="propName6" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
-                            <InputField name="ent1" disabled = {toggle}/>
+                            <InputField name="ent6" disabled = {toggle}/>
                             </TableContent>
                             <TableContent>
                             <SelectField2 as="select" name="location" disabled = {toggle}>
@@ -314,7 +345,7 @@ export const ProfileSectionTwo: FC = () => {
                             </SelectField2>
                             </TableContent>
                             <TableContent>
-                                <StyledDate selected={date1} onChange={(date) => setDate1(date as Date)} disabled = {toggle}></StyledDate> 
+                                <StyledDate selected={date6} onChange={(date) => setDate6(date as Date)} disabled = {toggle}></StyledDate> 
                             </TableContent>
                         </Row>
                         <SeeProfile style ={{marginTop:'20px', color: '#4b5268'}}>See more proposals</SeeProfile>
@@ -334,7 +365,7 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
                                 <InputField name="amount" disabled = {toggle}/>
@@ -353,10 +384,10 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost1" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
-                                <InputField name="amount" disabled = {toggle}/>
+                                <InputField name="amount1" disabled = {toggle}/>
                                 <SelectField2 as="select" name="year" disabled = {toggle}>
                                 {['$','€','£'].map((i:string)=>(<option key={i} value={i}>{i}</option>))}
                                 </SelectField2>
@@ -372,10 +403,10 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost2" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
-                                <InputField name="amount" disabled = {toggle}/>
+                                <InputField name="amount2" disabled = {toggle}/>
                                 <SelectField2 as="select" name="year" disabled = {toggle}>
                                 {['$','€','£'].map((i:string)=>(<option key={i} value={i}>{i}</option>))}
                                 </SelectField2>
@@ -391,10 +422,10 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost3" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
-                                <InputField name="amount" disabled = {toggle}/>
+                                <InputField name="amount3" disabled = {toggle}/>
                                 <SelectField2 as="select" name="year" disabled = {toggle}>
                                 {['$','€','£'].map((i:string)=>(<option key={i} value={i}>{i}</option>))}
                                 </SelectField2>
@@ -410,10 +441,10 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost4" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
-                                <InputField name="amount" disabled = {toggle}/>
+                                <InputField name="amount4" disabled = {toggle}/>
                                 <SelectField2 as="select" name="year" disabled = {toggle}>
                                 {['$','€','£'].map((i:string)=>(<option key={i} value={i}>{i}</option>))}
                                 </SelectField2>
@@ -429,10 +460,10 @@ export const ProfileSectionTwo: FC = () => {
                                 </SelectField2>
                             </TableContent>
                             <TableContent>
-                            <InputField name="propName1" disabled = {toggle}/>
+                            <InputField name="cost5" disabled = {toggle}/>
                             </TableContent>
                             <TableContent style= {{display:'flex', maxWidth:'140px'}}>
-                                <InputField name="amount" disabled = {toggle}/>
+                                <InputField name="amount5" disabled = {toggle}/>
                                 <SelectField2 as="select" name="year" disabled = {toggle}>
                                 {['$','€','£'].map((i:string)=>(<option key={i} value={i}>{i}</option>))}
                                 </SelectField2>
