@@ -1,9 +1,10 @@
-import React, {FC, useState} from 'react';
+import React, {ChangeEvent, FC, useState} from 'react';
 import { useSelector } from 'react-redux';
+import Icons from '../../common/Icons';
 import { ISinglePhoto } from '../../entities/photo';
 import { IState } from '../../reducers';
 import { IPhotoReducer } from '../../reducers/photoReducers';
-import {  EntitiesHeaderLeft, EntitiesHeaderRight, EntitiesHeader, EntitiesPageWrapper, EntitesWrapper, EntitiesHeaderItem, MosaicBtn, ListBtn} from './EntitiesPage.styles';
+import {  EntitiesHeaderLeft, EntitiesHeaderRight, EntitiesHeader, EntitiesPageWrapper, EntitesWrapper, EntitiesHeaderItem, MosaicBtn, ListBtn, All, Dots, Sort, Filter, Full, Share, Followed, Form, Input, Button} from './EntitiesPage.styles';
 import {SingleEntity} from './SingleEntity.component'
 
 interface IEntities {
@@ -148,8 +149,13 @@ export const EntitiesPage: FC = () =>{
         ...globalState.photos
       }))
     const [isFullscreen,setToggleFullscreen]= useState(false);
+    const [active,setActive]= useState(false);
     const [view,setView]= useState<View>(View.Mosaic);
     const [inputText, setInputText] = useState<string>('');
+    const inputHandler = (e: ChangeEvent<HTMLInputElement>) =>{
+        const text= e.target.value;
+        setInputText(text);
+    };
     const toggleMosaic = () => {
 		setView(View.Mosaic);
 	};
@@ -177,8 +183,23 @@ export const EntitiesPage: FC = () =>{
                 </EntitiesHeaderRight>
             </EntitiesHeader>
             <EntitiesHeader>
-                <EntitiesHeaderLeft>blalbal</EntitiesHeaderLeft>
-                <EntitiesHeaderRight><button onClick = {() => setToggleFullscreen((prevToggle => !prevToggle))}>full</button></EntitiesHeaderRight>
+                <EntitiesHeaderLeft>
+                    <All beforeImg = {Icons.allIcon} afterImg = {Icons.arrowDownIcon} active = {active} onClick = {() => setActive((prevToggle => !prevToggle))}>All</All>
+                    <Dots/>
+                    <Sort beforeImg = {Icons.sortIcon}>Sort</Sort>
+                    <Filter beforeImg = {Icons.filterIcon}>Filter</Filter>
+                    <Full onClick = {() => setToggleFullscreen((prevToggle => !prevToggle))}/>
+                    <Share beforeImg = {Icons.shareIcon} onClick={() => {
+                        navigator.clipboard.writeText(window.location.href);
+                         alert("Link copied to the clipboard!");}}>Share</Share>
+                </EntitiesHeaderLeft>
+                <EntitiesHeaderRight>
+                <Form>
+                <Input type="text" placeholder = "Search..." value={inputText} onChange={inputHandler}></Input>
+                <Button type="submit"><img alt ="" src={Icons.searchIcon} /></Button>
+                </Form>
+                <Followed beforeImg = {Icons.followedIcon} afterImg = {Icons.arrowDownIcon} border>Followed</Followed>
+                </EntitiesHeaderRight>
             </EntitiesHeader>
             <EntitesWrapper view = {view} >{entitiesList}</EntitesWrapper>
         </EntitiesPageWrapper>

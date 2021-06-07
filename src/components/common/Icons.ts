@@ -27,7 +27,13 @@ import closeIcon from './icons/close.svg';
 import editIcon from './icons/edit.svg';
 import mosaicIcon from './icons/mosaic.svg';
 import listIcon from './icons/list.svg';
-
+import allIcon from './icons/all.svg';
+import sortIcon from './icons/sort.svg';
+import shareIcon from './icons/share.svg';
+import followedIcon from './icons/followed.svg';
+import fullIcon from './icons/full.svg';
+import filterIcon from './icons/filter.svg';
+import dotsIcon from './icons/dots.svg';
 
 
 
@@ -61,7 +67,14 @@ export const Icons ={
  editIcon,
  closeIcon,
  mosaicIcon,
- listIcon
+ listIcon,
+ allIcon,
+ followedIcon,
+ sortIcon,
+ shareIcon,
+ fullIcon,
+ filterIcon,
+ dotsIcon,
 };
 
 export default Icons;
