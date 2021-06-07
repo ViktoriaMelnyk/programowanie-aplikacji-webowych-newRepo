@@ -13,6 +13,7 @@ import { ISingleUser } from '../../../entities/users';
 import Pagination from './Pagination.component';
 import { ISingleComment } from '../../../entities/comments';
 import { Filter } from '../../../TopNav/DropdownContent/CircleMenu.styles';
+import { Button, EntitiesHeader, EntitiesHeaderLeft, EntitiesHeaderRight, Followed, Form, Input } from '../../../Pages/Entities/EntitiesPage.styles';
 
 
 
@@ -72,10 +73,20 @@ export const Comments: FC=()=>{
     
       return (
         <WorkspacesWrapper>
-            <WorkspacesTitle>
+            <EntitiesHeader>
+              <EntitiesHeaderLeft>
+                <WorkspacesTitle>
                 Resume your work  
-            </WorkspacesTitle>
-            <Filter type="text" placeholder = "filter..." value={inputText} onChange={inputHandler}></Filter>
+              </WorkspacesTitle>
+              </EntitiesHeaderLeft>
+            <EntitiesHeaderRight>
+                <Form>
+                <Input type="text" placeholder = "Search..." value={inputText} onChange={inputHandler}></Input>
+                <Button type="submit"><img alt ="" src={Icons.searchIcon} /></Button>
+                </Form>
+                <Followed beforeImg = {Icons.followedIcon} afterImg = {Icons.arrowDownIcon} border>Followed</Followed>
+            </EntitiesHeaderRight>
+            </EntitiesHeader> 
             
             <CommentsWrapper>{renderResumeWorks()}</CommentsWrapper>
             <Pagination

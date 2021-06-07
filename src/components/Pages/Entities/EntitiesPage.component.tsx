@@ -1,11 +1,13 @@
 import React, {ChangeEvent, FC, useState} from 'react';
 import { useSelector } from 'react-redux';
 import Icons from '../../common/Icons';
-import { ISinglePhoto } from '../../entities/photo';
 import { IState } from '../../reducers';
 import { IPhotoReducer } from '../../reducers/photoReducers';
 import {  EntitiesHeaderLeft, EntitiesHeaderRight, EntitiesHeader, EntitiesPageWrapper, EntitesWrapper, EntitiesHeaderItem, MosaicBtn, ListBtn, All, Dots, Sort, Filter, Full, Share, Followed, Form, Input, Button} from './EntitiesPage.styles';
 import {SingleEntity} from './SingleEntity.component'
+import useDropdown from 'react-dropdown-hook';
+import {FilterComp} from './Filter/Filter.component'
+import { DropdownWrapper } from '../../TopNav/styles';
 
 interface IEntities {
     id:number,
@@ -148,6 +150,7 @@ export const EntitiesPage: FC = () =>{
     const { photoList }= useSelector<IState, IPhotoReducer>(globalState => ({
         ...globalState.photos
       }))
+      const [wrapperRef, dropdownOpen, toggleDropdown, closeDropdown] = useDropdown();
     const [isFullscreen,setToggleFullscreen]= useState(false);
     const [active,setActive]= useState(false);
     const [view,setView]= useState<View>(View.Mosaic);
@@ -183,11 +186,15 @@ export const EntitiesPage: FC = () =>{
                 </EntitiesHeaderRight>
             </EntitiesHeader>
             <EntitiesHeader>
-                <EntitiesHeaderLeft>
+                <EntitiesHeaderLeft >
                     <All beforeImg = {Icons.allIcon} afterImg = {Icons.arrowDownIcon} active = {active} onClick = {() => setActive((prevToggle => !prevToggle))}>All</All>
                     <Dots/>
                     <Sort beforeImg = {Icons.sortIcon}>Sort</Sort>
-                    <Filter beforeImg = {Icons.filterIcon}>Filter</Filter>
+                    <DropdownWrapper ref={wrapperRef}>
+                        <Filter beforeImg = {Icons.filterIcon} onClick={toggleDropdown}>Filter</Filter>
+                        {dropdownOpen && <FilterComp/>}
+                    </DropdownWrapper>
+                    
                     <Full onClick = {() => setToggleFullscreen((prevToggle => !prevToggle))}/>
                     <Share beforeImg = {Icons.shareIcon} onClick={() => {
                         navigator.clipboard.writeText(window.location.href);

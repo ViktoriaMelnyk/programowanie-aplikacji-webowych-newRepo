@@ -20,15 +20,15 @@ export const EntitiesPageWrapper = styled('div')<{isFullsceen:boolean}>`
    min-height: ${(props) =>
    props.isFullsceen? '100vh':''};
    z-index: ${(props) =>
-   props.isFullsceen? '100':'0'};
+   props.isFullsceen? '1000':'0'};
    background-color: #fff;
    box-shadow: 0 8px 6px -6px #cdd0d7;
-
 `;
 export const EntitiesHeader = styled.div`
     display:flex;
     justify-content: space-between;
     padding:10px;
+    position: relative;
 `;
 export const EntitiesHeaderItem = styled.div`
     font-size: 16px;
@@ -259,4 +259,70 @@ export const SingleEntityText = styled.div`
     color: #b4b7ba;
     padding:5px 0;
 `;
+export const FilterWrapper = styled.div`
+  width: 100%;
+  max-width: 930px;
+  background-color: #fff;
+  box-shadow: 0 8px 6px -6px #cdd0d7;
+  position: absolute;
+  top: auto;
+  left: 0px;
+  overflow: hidden;
+  z-index: 100;
+  padding: 25px; 
+`;
+
+export const FiltersRow = styled.div`
+ display: flex;
+ justify-content: start;
+ width: 100%;
+ color: #b4b7ba;
+ font-size:16;
+ align-items: flex-start;
+`;
+export const TextWithX = styled('div')<{beforeImg?:string, afterImg?: string}>`
+  height: 40px;
+  position:relative;
+  display: flex;
+  padding: 8px;
+  padding-left: 50px;
+  padding-right: 20px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 500;
+  cursor:pointer;
+  margin-right: 10px;
+
+  &::before{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
+    position: absolute;
+    left: 10px;
+  }
+  &::after{
+    content:  ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.afterImg}')`};
+    position: absolute;
+    top:50%;
+    right: 0px;
+    transform: translate(-50%, -50%);
+
+  }
+`;
+export const TextWithPlus = styled(TextWithX)`
+  color: #2a3f9d;
+`;
+export const FilterInput = styled(Input)`
+  margin: 5px;
+  width:120px;
+  background-color: #E8E8E8;
+  color: #DADADA;
+  border: none;
+  border-radius: 5px;
+  text-align:start;
+  padding: 5px;
+
+`;
+
+
 
