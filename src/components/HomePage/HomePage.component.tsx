@@ -20,7 +20,7 @@ export const HomePage: FC<IHomePage>=props =>{
         <HomePageWrapper>
             <LatestPublications  id = {props.user.id}/>
             <Workspaces />
-            <Comments/>
+            <Comments id = {props.user.id}/>
         </HomePageWrapper>
     );
 };

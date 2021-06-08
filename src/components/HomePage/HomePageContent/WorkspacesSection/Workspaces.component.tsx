@@ -22,7 +22,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/client-contract',
+        link: '/ClientContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/4/200',
@@ -31,7 +31,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 22,
         apdateDay: 3,
-        link: '/workspaces/client-contract',
+        link: '/ClientContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -40,7 +40,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/supplier-contract',
+        link: '/SupplierContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -49,7 +49,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/supplier-contract',
+        link: '/SupplierContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/200',
@@ -58,7 +58,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 15,
         apdateDay: 22,
-        link: '/workspaces/corporate',
+        link: '/Corporate',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -67,7 +67,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/contract',
+        link: '/SupplierContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -76,7 +76,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/contract',
+        link: '/SupplierContract',
     },
     {
         BgimgUrl: 'https://picsum.photos/id/258/200',
@@ -85,7 +85,7 @@ const workspacesContent: IWorkspaces[] = [
         smallText:'Contract',
         usersNum: 150,
         apdateDay: 2,
-        link: '/workspaces/contract',
+        link: '/SupplierContract',
     },
     
 ];

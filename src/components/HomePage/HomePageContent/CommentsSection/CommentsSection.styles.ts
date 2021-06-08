@@ -60,5 +60,55 @@ export const PaginationWrapper = styled.div`
       border: 1px solid #2a3f9d;
     }
 `;
+export const StyledOption = styled.option `
+
+`;
+export const StyledSelect = styled.select`
+	position: absolute;
+	left: 45px;
+	width: 120px;
+	border: none;
+	padding: 10px;
+	background-color: inherit;
+  color: #2a3f9d;
+	font-weight: 700;
+  font-size:12px;
+	text-align: center;
+  cursor: pointer;
+	outline: none;
+	appearance: none;
+  align-items: center;
+`;
+export const SelectorContainer = styled.div <{beforeImg?: string, afterImg?:string }>`
+  width: 130px;
+  height: 30px;
+  position:relative;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border-radius:3px;
+  font-size:16px;
+  &::before{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
+    position: absolute;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &::after{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.afterImg}')`};
+    position: absolute;
+    top:3px;
+    right: 0px;
+    cursor:pointer;
+
+
+  }
+`;
+
+
 
 

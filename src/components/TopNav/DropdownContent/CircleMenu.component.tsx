@@ -35,11 +35,11 @@ export const CircleMenu: FC <ICircleMenu>=props=>{
             </CircleUl>
             <Title>Workspaces</Title>
              <CircleUl>
-                    {'Client Contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl={Icons.contractIcon}  padding = '0px' ><Link to = "/ClientContractPage">Client contract</Link></CircleLi>}
-                    {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/ClientContractPage">Supplier contract</Link></CircleLi>}
-                    {'Corporate'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.entitiesIcon} padding = '0px'><Link to = "/ClientContractPage">Corporate</Link></CircleLi>}
-                    {'Group Norms'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.bookIcon} padding = '0px'><Link to = "/ClientContractPage">Group Norms</Link></CircleLi>}
-                    {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/ClientContractPage">Real estate contracts</Link></CircleLi>}
+                    {'Client Contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl={Icons.contractIcon}  padding = '0px' ><Link to = "/ClientContract">Client contract</Link></CircleLi>}
+                    {'Supplier contract'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/SupplierContract">Supplier contract</Link></CircleLi>}
+                    {'Corporate'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.entitiesIcon} padding = '0px'><Link to = "/Corporate">Corporate</Link></CircleLi>}
+                    {'Group Norms'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.bookIcon} padding = '0px'><Link to = "/GroupNorms">Group Norms</Link></CircleLi>}
+                    {'Real estate contracts'.toLowerCase().includes(inputText.toLowerCase())&&<CircleLi beforeImgUrl ={Icons.contractIcon} padding = '0px'><Link to = "/RealEstateContracts">Real estate contracts</Link></CircleLi>}
             </CircleUl>
             <Title>Workspaces</Title>
               <CircleUl>

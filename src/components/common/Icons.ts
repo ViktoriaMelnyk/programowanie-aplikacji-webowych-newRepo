@@ -34,8 +34,8 @@ import followedIcon from './icons/followed.svg';
 import fullIcon from './icons/full.svg';
 import filterIcon from './icons/filter.svg';
 import dotsIcon from './icons/dots.svg';
-
-
+import calendarIcon from './icons/calendar.svg';
+import structureIcon from './icons/structure.svg';
 
 
 export const Icons ={
@@ -75,6 +75,8 @@ export const Icons ={
  fullIcon,
  filterIcon,
  dotsIcon,
+ calendarIcon,
+ structureIcon
 };
 
 export default Icons;

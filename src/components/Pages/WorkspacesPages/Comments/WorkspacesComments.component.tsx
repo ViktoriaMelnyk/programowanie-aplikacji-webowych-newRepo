@@ -1,16 +1,16 @@
 import React, {ChangeEvent, FC, useState} from 'react';
 import Icons from '../../../common/Icons';
-import { WorkspacesWrapper, WorkspacesTitle } from '../WorkspacesSection/Workspaces.styles';
-import { CommentsWrapper, SelectorContainer, StyledOption, StyledSelect } from './CommentsSection.styles';
-import { SingleComment } from './SingleComment.component';
+import { WorkspacesWrapper, WorkspacesTitle } from '../../../HomePage/HomePageContent/WorkspacesSection/Workspaces.styles';
+import { CommentsWrapper, SelectorContainer, StyledOption, StyledSelect } from '../../../HomePage/HomePageContent/CommentsSection/CommentsSection.styles';
+import { SingleComment } from '../../../HomePage/HomePageContent/CommentsSection/SingleComment.component';
 import { useSelector } from 'react-redux';
 import { IState } from '../../../reducers';
 import { IPhotoReducer } from '../../../reducers/photoReducers';
 import { IPostsReducer } from '../../../reducers/postsReducers';
 import { ICommentsReducer } from '../../../reducers/commentsReducers';
 import { IUsersReducer } from '../../../reducers/usersReducers';
-import Pagination from './Pagination.component';
-import { Button, EntitiesHeader, EntitiesHeaderLeft, EntitiesHeaderRight, Followed, Form, Input } from '../../../Pages/Entities/EntitiesPage.styles';
+import Pagination from '../../../HomePage/HomePageContent/CommentsSection/Pagination.component';
+import { Button, EntitiesHeader, EntitiesHeaderLeft, EntitiesHeaderRight, Form, Input } from '../../Entities/EntitiesPage.styles';
 
 
 
@@ -19,7 +19,7 @@ interface ICommentsUser {
 
 }
 
-export const Comments: FC<ICommentsUser>=props=>{
+export const WorkspacesComments: FC<ICommentsUser>=props=>{
     const { photoList }= useSelector<IState, IPhotoReducer>(globalState => ({
         ...globalState.photos
       }))

@@ -17,8 +17,12 @@ import { EcosystemPage} from '../Pages/EcosystemPage.component';
 import { PeoplePage} from '../Pages/PeoplePage.component';
 import { AdminPage} from '../Pages/AdminPage.component';
 import { HomePage } from '../HomePage/HomePage.component';
-import { ClientContractPage } from '../Pages/ClientContractPage.component';
 import {ProfilePage} from '../Pages/ProfilePage/Profile.component';
+import {ClientContract} from '../Pages/WorkspacesPages/ClientContract/ClientContract.component';
+import {Corporate} from '../Pages/WorkspacesPages/Corporate/Corporate.component';
+import {GroupNorms} from '../Pages/WorkspacesPages/GroupNorms/GroupNorms.component';
+import {RealEstateContracts} from '../Pages/WorkspacesPages/RealEstateContracts/RealEstateContracts.component';
+import {SupplierContract} from '../Pages/WorkspacesPages/SupplierContract/SupplierContract.component';
 
 import {getUsers} from '../../actions/usersActions';
 import {getPhotos} from '../../actions/photoActions';
@@ -110,9 +114,22 @@ const MainPage: FC = () =>{
               <Route path="/EcosystemPage">
                 <EcosystemPage/>
               </Route>
-              <Route path="/ClientContractPage">
-                <ClientContractPage/>
+              <Route path="/ClientContract">
+                <ClientContract user = {User}/>
               </Route>
+              <Route path="/Corporate">
+                <Corporate user = {User}/>
+              </Route>
+              <Route path="/GroupNorms">
+                <GroupNorms user = {User}/>
+              </Route>
+              <Route path="/RealEstateContracts">
+                <RealEstateContracts user = {User}/>
+              </Route>
+              <Route path="/SupplierContract">
+                <SupplierContract user = {User}/>
+              </Route>
+              
               <Route path="/ProfilePage">
                 <ProfilePage user = {User}/>
               </Route>

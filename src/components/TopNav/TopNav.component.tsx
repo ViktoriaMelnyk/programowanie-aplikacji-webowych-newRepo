@@ -39,6 +39,18 @@ export const TopNav: FC <IDropDownUser> = props =>{
         return `${Icons.adminIcon}`;
       case "/ProfilePage":
         return `${Icons.peopleIcon}`;
+        case "/ClientContract":
+          return `${Icons.contractIcon}`;
+        case "/Corporate":
+          return `${Icons.entitiesIcon}`;
+        case "/GroupNorms":
+          return `${Icons.bookIcon}`;
+        case "/RealEstateContracts":
+          return `${Icons.contractIcon}`;
+        case "/SupplierContract":
+          return `${Icons.contractIcon}`;
+        case "/EcosystemPage":
+          return `${Icons.ecosystemIcon}`;
       default:
         return "";
     }
@@ -57,6 +69,18 @@ export const TopNav: FC <IDropDownUser> = props =>{
         return "Administration";
       case "/ProfilePage":
         return "Profile"
+      case "/ClientContract":
+        return "Client Contract"
+      case "/Corporate":
+        return "Corporate"
+      case "/GroupNorms":
+        return "Group Norms"
+      case "/RealEstateContracts":
+        return "Real Estate Contracts"
+      case "/SupplierContract":
+        return "Supplier Contract"
+      case "/EcosystemPage":
+        return "Ecosystem"
       default:
         return "";
     }

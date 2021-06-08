@@ -92,6 +92,8 @@ export const DropdownA = styled('a') <{beforeImg: string, afterImg?:string}>`
     `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
     position: absolute;
     left: 10px;
+    width: 20px;
+    height:20px;
   }
 
   &::after{

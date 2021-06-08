@@ -41,7 +41,7 @@ export const EntitiesHeaderItem = styled.div`
         left: 70px;
     }
 `;
-export const All = styled('a') <{beforeImg: string, afterImg?:string ,active?: boolean , border?:boolean }>`
+export const All = styled('a') <{beforeImg?: string, afterImg?:string ,active?: boolean , border?:boolean }>`
   width: 65px;
   height: 30px;
   position:relative;
