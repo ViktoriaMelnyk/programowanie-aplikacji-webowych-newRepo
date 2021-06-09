@@ -1,9 +1,11 @@
-import React, {FC} from 'react';
+import { Component } from 'react';
 
 import Icons from '../../../common/Icons';
 import {FilterInput, FiltersRow, FilterWrapper, TextWithPlus, TextWithX} from '../EntitiesPage.styles'
-export const FilterComp: FC = () =>{
-    return(
+
+export class FilterComp extends Component{
+    render(){
+        return(
         <FilterWrapper>
             <FiltersRow>Rows are filtered by the following conditions starting from the top.</FiltersRow>
             <FiltersRow>
@@ -34,5 +36,9 @@ export const FilterComp: FC = () =>{
                 <TextWithPlus afterImg = {Icons.arrowDownIcon}>choose property</TextWithPlus>
             </FiltersRow>
         </FilterWrapper>
-    );
-};
+        );
+    }
+
+}
+
+export default FilterComp;
