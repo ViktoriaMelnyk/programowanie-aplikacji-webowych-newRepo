@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Colors from '../common/Colors';
 
 
 
@@ -7,8 +8,8 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   height: 65px;
   padding: 12px 15px;
-  box-shadow: 0 8px 6px -6px 	#E8E8E8;
-  background-color: #fff;
+  box-shadow: 0 8px 6px -6px 	${Colors.filterGrey};
+  background-color: ${Colors.white};
   margin-bottom: 5px;
 
 `;
@@ -120,7 +121,7 @@ export const Input = styled.input`
   display: block;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #e0e3e7;
+  border: 1px solid ${Colors.borderColor};
   font-size: 20px;
   font-weight: 100;
   outline: none;
@@ -148,7 +149,7 @@ export const DropdownComp = styled.div`
   width: 260px;
   height: 40px;
   position: relative;
-  box-shadow: 0 8px 6px -6px 	#E8E8E8;
+  box-shadow: 0 8px 6px -6px 	${Colors.filterGrey};
 `;
 export const DropdownWrapper = styled.div`
 

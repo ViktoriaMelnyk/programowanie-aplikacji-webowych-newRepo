@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
-import Icons from '../../../common/Icons';
-import {SmallIcon, SmallText, Update} from '../WorkspacesSection/Workspaces.styles'
+import { SmallText, Update} from '../WorkspacesSection/Workspaces.styles'
 import { SingleCommentInner, SingleCommentTitle, SingleCommentText, CommentInfo, ComIcon } from './CommentsSection.styles';
 
 interface ISingleCommentProps {

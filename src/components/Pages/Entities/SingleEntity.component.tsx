@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import { EntityInfo, EntityPhoto, SingleEntityInner, SingleEntityText, SingleEntityTitle } from './EntitiesPage.styles'
-import {View, IListOrMosaicProps} from './EntitiesPage.component'
+import {View} from './EntitiesPage.component'
 
 
 interface ISingleEntityProps {

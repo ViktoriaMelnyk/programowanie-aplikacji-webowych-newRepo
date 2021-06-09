@@ -1,4 +1,4 @@
- import adminIcon from './icons/administration.svg';
+import adminIcon from './icons/administration.svg';
 import logoIcon from './icons/logo.png';
 import homeIcon from './icons/house.svg';
 import blackHouseIcon from './icons/house2.svg';
@@ -76,7 +76,7 @@ export const Icons ={
  filterIcon,
  dotsIcon,
  calendarIcon,
- structureIcon
+ structureIcon,
 };
 
 export default Icons;

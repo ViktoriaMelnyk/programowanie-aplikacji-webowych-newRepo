@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import Colors from '../common/Colors'
 
 export const AsideWrapper = styled.aside`
   margin-left: 30px;
@@ -36,17 +36,17 @@ export const UserName = styled.div`
  padding: 2px;
  margin: 5px;
  text-align: center;
- color:#2a3f9d;
+ color: ${Colors.textBlue};
  font-size: 20px;
 `;
 export const UserJobTitle = styled.div`
  padding: 2px;
  margin: 5px;
  text-align: center; 
- color: #b4b7ba;
+ color:${Colors.textLightGrey};
 `;
 export const UserBookmarks = styled.ul`
-   border-top: #e0e3e7 1px solid;
+   border-top: ${Colors.borderColor} 1px solid;
    
 `;
 
@@ -87,7 +87,7 @@ export const Li = styled('li')<{beforeImgUrl?:string, afterImgUrl?:string, paddi
         }
         
         a{
-            color: #192136;
+            color: ${Colors.black};
             font-size: 18px;
             outline: none;
         }

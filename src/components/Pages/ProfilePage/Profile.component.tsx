@@ -1,6 +1,5 @@
 import React, { Dispatch, FC, SetStateAction, useState } from "react";
 import { Formik, Field, Form } from "formik";
-import { UserImg } from "../../Aside/aside.style";
 import Icons from "../../common/Icons";
 import {Close, Edit, HeaderItem, LeftSide, ProfileForm, ProfileHeader, ProfileWrapper, RightSide, SeeProfile, TextField, User, UserInfo, UserPhoto, UserWrapper} from './Profile.styles'
 import {ProfileSectionTwo} from './ProfileSecion2/ProfileSection2.component';

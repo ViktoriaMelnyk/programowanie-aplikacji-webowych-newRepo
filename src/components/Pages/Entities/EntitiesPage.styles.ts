@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Colors from '../../common/Colors';
 import Icons from '../../common/Icons';
 import {View, IListOrMosaicProps} from './EntitiesPage.component'
 
@@ -21,8 +22,8 @@ export const EntitiesPageWrapper = styled('div')<{isFullsceen:boolean}>`
    props.isFullsceen? '100vh':''};
    z-index: ${(props) =>
    props.isFullsceen? '1000':'0'};
-   background-color: #fff;
-   box-shadow: 0 8px 6px -6px #cdd0d7;
+   background-color:${Colors.white};
+   box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
 `;
 export const EntitiesHeader = styled.div`
     display:flex;
@@ -49,14 +50,14 @@ export const All = styled('a') <{beforeImg?: string, afterImg?:string ,active?: 
   align-items: flex-start;
   padding: 5px 45px 5px 35px;
   cursor: pointer;
-  color: #2a3f9d;
+  color: ${Colors.textBlue};
   font-weight: 500;
   background-color:${(props) =>
    props.active? '#E6F0F3':'transparent'};
   border:${(props) =>
    props.border? '1px solid #2a3f9d':'none'};
   border-radius:3px;
-  box-shadow: 0 8px 6px -6px #cdd0d7;
+  box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
 
   &::before{
     content: ${(props) =>
@@ -93,7 +94,7 @@ export const ListBtn = styled('button')<IListOrMosaicProps>`
     border-radius:3px;
     padding: 10px;
     background-color: ${({view}) =>
-    view === View.List ? "#E6F0F3" : "transparent"};
+    view === View.List ? `${Colors.lightBlue}` : "transparent"};
 
 `;
  export const Dots = styled('button')`
@@ -117,10 +118,10 @@ export const ListBtn = styled('button')<IListOrMosaicProps>`
     cursor: pointer;
     outline: none;
     border: none;
-    color: #b4b7ba;
+    color: ${Colors.textLightGrey};
     position: relative;
     font-weight: 500;
-    border-left: 1px solid #b4b7ba;
+    border-left: 1px solid ${Colors.textLightGrey};
     &::before{
     content: ${(props) =>
     `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
@@ -134,7 +135,7 @@ export const ListBtn = styled('button')<IListOrMosaicProps>`
 export  const Filter = styled(Sort)`
     width: 80px;
     border-left:none;
-    border-right: 1px solid #b4b7ba;
+    border-right: 1px solid ${Colors.textLightGrey};
 
 `;
 export const Full = styled(Dots)`
@@ -163,14 +164,14 @@ export const Input = styled.input`
   display: block;
   width: 100%;
   border-radius: 4px;
-  border: 1px solid #b4b7ba;
+  border: 1px solid ${Colors.textLightGrey};
   font-size: 14px;
   font-weight: 100;
   outline: none;
   cursor:pointer;
   
   &::placeholder {
-        color: #b4b7ba;
+        color: ${Colors.textLightGrey};
     }
 `;
 export const Button = styled.button`
@@ -209,7 +210,7 @@ export const MosaicBtn = styled('button')<IListOrMosaicProps>`
     font-weight: 600;
     border-radius:3px;
     background-color: ${({view}) =>
-    view === View.Mosaic ? "#E6F0F3" : "transparent"};
+    view === View.Mosaic ? `${Colors.lightBlue}` : "transparent"};
     ::before{
         content: url('${Icons.mosaicIcon}');
         position: absolute;
@@ -236,7 +237,7 @@ export const SingleEntityInner = styled('div')<IListOrMosaicProps>`
     view === View.List ? "" : "space-between"};
     max-width:${({view}) =>
     view === View.List ? "100%" : "250px"};
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
     padding:5px;
     text-align: start;
 
@@ -251,19 +252,19 @@ export const EntityPhoto = styled('div')<{imgUrl?:string}>`
 `;
 export const EntityInfo = styled.div``;
 export const SingleEntityTitle = styled.div`
-    color:#2a3f9d;
+    color:${Colors.textBlue};
     font-size: 14px;
 `;
 export const SingleEntityText = styled.div`
     font-size: 12px;
-    color: #b4b7ba;
+    color:${Colors.textLightGrey};
     padding:5px 0;
 `;
 export const FilterWrapper = styled.div`
   width: 100%;
   max-width: 930px;
-  background-color: #fff;
-  box-shadow: 0 8px 6px -6px #cdd0d7;
+  background-color: ${Colors.white};
+  box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
   position: absolute;
   top: auto;
   left: 0px;
@@ -276,7 +277,7 @@ export const FiltersRow = styled.div`
  display: flex;
  justify-content: start;
  width: 100%;
- color: #b4b7ba;
+ color: ${Colors.textLightGrey};
  font-size:16;
  align-items: flex-start;
 `;
@@ -310,12 +311,12 @@ export const TextWithX = styled('div')<{beforeImg?:string, afterImg?: string}>`
   }
 `;
 export const TextWithPlus = styled(TextWithX)`
-  color: #2a3f9d;
+  color: ${Colors.textBlue};
 `;
 export const FilterInput = styled(Input)`
   margin: 5px;
   width:120px;
-  background-color: #E8E8E8;
+  background-color: ${Colors.filterGrey};
   color: #DADADA;
   border: none;
   border-radius: 5px;

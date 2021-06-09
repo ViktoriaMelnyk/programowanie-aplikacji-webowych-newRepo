@@ -1,21 +1,22 @@
 import styled from 'styled-components';
-import {Icons} from '../../../common/Icons';
+import Colors from '../../../common/Colors';
+import { WorkspacesTitle } from '../WorkspacesSection/Workspaces.styles';
 
 export const SingleCommentInner = styled.div`
-    background-color: #fff;
+    background-color: ${Colors.white};
     margin-bottom: 20px;
     padding: 10px 15px;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
 `;
 export const SingleCommentTitle = styled.div`
-    color:#2a3f9d;
+    color:${Colors.textBlue};
     font-size: 20px;
     font-weight: 500;
     margin-bottom:10px;
     
 `;
 export const CommentInfo = styled.div`
-    color: #b4b7ba;
+    color: ${Colors.textLightGrey};
     display: flex;
     font-size: 14px;
 
@@ -45,7 +46,7 @@ export const PaginationWrapper = styled.div`
 
   margin-top: 0.5rem;
   .page {
-    color:#2a3f9d;
+    color:${Colors.textBlue};
     font-weight: 600;
     margin-right: 5px;
     min-width: 32px;
@@ -56,8 +57,8 @@ export const PaginationWrapper = styled.div`
     cursor: pointer;
   }
   .page.active {
-      background-color: #fff;
-      border: 1px solid #2a3f9d;
+      background-color: ${Colors.white};
+      border: 1px solid ${Colors.textBlue};
     }
 `;
 export const StyledOption = styled.option `
@@ -70,7 +71,7 @@ export const StyledSelect = styled.select`
 	border: none;
 	padding: 10px;
 	background-color: inherit;
-  color: #2a3f9d;
+  color: ${Colors.textBlue};
 	font-weight: 700;
   font-size:12px;
 	text-align: center;
@@ -108,7 +109,34 @@ export const SelectorContainer = styled.div <{beforeImg?: string, afterImg?:stri
 
   }
 `;
-
+export const CommentsTitle = styled(WorkspacesTitle)`
+    padding:0;
+    margin-left: 20px;
+`;
+export const WorkspacesBtn = styled('button')<{color?:string, beforeImg?: string , padding?:boolean, fcolor?:string}>`
+  height:45px;
+  width: fit-content;
+  border: none;
+  outline: none;
+  padding-left:  ${(props) =>
+   props.padding? '40px':''};
+  position: relative;
+  padding-right: 8px;
+  padding-bottom:2px;
+  font-weight: 700;
+  border-radius: 7px;
+  box-shadow: 0 1px 1px ${Colors.boxShadow},0 1px 7px ${Colors.boxShadow}, 0 5px 7px ${Colors.boxShadow} ;
+  color:${(props) =>`${props.fcolor}`};
+  background-color: ${(props) =>`${props.color}`} ;
+  &::before{
+    content: ${(props) =>
+    `url('${process.env.PUBLIC_URL}${props.beforeImg}')`};
+    position: absolute;
+    left: 6px;
+    top: 13px;
+    
+  }
+`;
 
 
 

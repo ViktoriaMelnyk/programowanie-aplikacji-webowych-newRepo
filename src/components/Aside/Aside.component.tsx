@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import { Link } from 'react-router-dom';
 import Icons from '../common/Icons';
-
+import Colors from '../common/Colors';
 
 
 
@@ -23,7 +23,7 @@ export const Aside: FC<IAsideUser>= props =>{
     return(
         <AsideWrapper>
 
-            <AsideItem bgColor = "white">
+            <AsideItem bgColor = {Colors.white}>
                 <User>
                     <UserImg imgUrl = {props.user.imgUrl}></UserImg>
                     <UserName>{props.user.name}</UserName>

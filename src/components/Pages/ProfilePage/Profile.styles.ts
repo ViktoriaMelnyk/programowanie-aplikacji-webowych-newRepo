@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { Field, Form } from "formik";
 import Icons from '../../common/Icons';
 import { UserImg } from '../../Aside/aside.style';
+import Colors from '../../common/Colors';
 
 export const ProfileWrapper = styled.div`
   max-width: 930px;
   width: 100%;
   padding: 0px 15px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: ${Colors.white};
   margin-bottom:20px;
 `;
 export const ProfileHeader = styled.div`
@@ -62,7 +63,7 @@ export const UserPhoto = styled(UserImg)`
 `;
 
 export const SeeProfile = styled.div`
-  color: #6EAABA;
+  color:  ${Colors.textBlue};
   font-size: 24px;
   font-weight: 400;
   margin:5px 0;

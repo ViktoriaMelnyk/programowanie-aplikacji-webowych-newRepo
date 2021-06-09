@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import {Icons} from '../../../common/Icons'
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
+import Colors from '../../../common/Colors';
 
 export const WorkspacesTitle = styled.div`
     padding: 25px 0px 15px 40px;
     font-weight: 700;
     font-size: 22px;
-    color: #4b5268;
+    color: ${Colors.titleDarkGrey};
 `;
 
 export const WorkspacesWrapper = styled.div`
@@ -19,10 +20,10 @@ export const WorkspaceItemWrapper = styled.div`
 export const SliderWrapper = styled(Slider)`
     
     .slick-slide {
-    background-color: #fff;
+    background-color: ${Colors.white};
     outline: none;
     margin-right: 15px;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
     
     }
     .slick-list {
@@ -39,7 +40,7 @@ export const BgIcon = styled.div`
 `;
 export const Content = styled.div`
    position: relative;
-   color: #192136;
+   color: ${Colors.black};
    padding: 10px;
    padding-right: 3px;
 `;
@@ -48,10 +49,10 @@ export const SmallIcon = styled.div`
     height: 80px;
     align-items: center;
     text-align: center;
-    background-color: #fff;
+    background-color: ${Colors.white};
     position:absolute;
     top: -50px;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
     img{
         display: inline-block;
         width:50px;
@@ -64,7 +65,7 @@ export const WorkspacesText = styled(Link)`
     padding: 0px 0px 20px 85px;
     font-weight: 500;
     outline: none;
-    color: #2a3f9d;
+    color: ${Colors.textBlue};
 `;
 export const SmallContentInner = styled.div`
     display: flex;

@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC, useState} from 'react';
 import Icons from '../../../common/Icons';
 import { WorkspacesWrapper, WorkspacesTitle } from '../../../HomePage/HomePageContent/WorkspacesSection/Workspaces.styles';
-import { CommentsWrapper, SelectorContainer, StyledOption, StyledSelect } from '../../../HomePage/HomePageContent/CommentsSection/CommentsSection.styles';
+import { CommentsTitle, CommentsWrapper, SelectorContainer, StyledOption, StyledSelect, WorkspacesBtn } from '../../../HomePage/HomePageContent/CommentsSection/CommentsSection.styles';
 import { SingleComment } from '../../../HomePage/HomePageContent/CommentsSection/SingleComment.component';
 import { useSelector } from 'react-redux';
 import { IState } from '../../../reducers';
@@ -86,11 +86,9 @@ export const WorkspacesComments: FC<ICommentsUser>=props=>{
       return (
         <WorkspacesWrapper>
             <EntitiesHeader>
-              <EntitiesHeaderLeft>
-                <WorkspacesTitle>
-                Resume your work  
-              </WorkspacesTitle>
-              </EntitiesHeaderLeft>
+              <CommentsTitle>
+                Latest updates  
+              </CommentsTitle>
             <EntitiesHeaderRight>
                 <Form>
                 <Input type="text" placeholder = "Search..." value={inputText} onChange={inputHandler}></Input>
@@ -103,7 +101,17 @@ export const WorkspacesComments: FC<ICommentsUser>=props=>{
                   </StyledSelect>
                 </SelectorContainer>   
             </EntitiesHeaderRight>
-            </EntitiesHeader> 
+            </EntitiesHeader>
+            <EntitiesHeader>
+              <WorkspacesBtn >All</WorkspacesBtn>
+              <WorkspacesBtn beforeImg= {Icons.entitiesIcon} padding color= '#EAECF5' fcolor= '#364AA3'>SAS</WorkspacesBtn>
+              <WorkspacesBtn  beforeImg= {Icons.entitiesIcon}padding color= '#CCE5CC'fcolor = '#66B266'>SARL</WorkspacesBtn>
+              <WorkspacesBtn  beforeImg= {Icons.entitiesIcon}padding color= '#EDF6FA'fcolor = '#2F97C9'>Secondary buisness</WorkspacesBtn>
+              <WorkspacesBtn  beforeImg= {Icons.structureIcon} padding color= '#F2E5C4'fcolor = '#D6A83D'>Communities</WorkspacesBtn>
+              <WorkspacesBtn  beforeImg= {Icons.calendarIcon} padding color= '#CCCCCC'fcolor = '#384058'>POA</WorkspacesBtn>
+              <WorkspacesBtn beforeImg= {Icons.yourPublicationsIcon}padding color= '#fff'fcolor = '#858A98'>Survey</WorkspacesBtn>
+              <WorkspacesBtn color= '#fff' fcolor = '#384058'>...</WorkspacesBtn>
+            </EntitiesHeader>
             <CommentsWrapper>{renderResumeWorks()}</CommentsWrapper>
             <Pagination
                 currentPage={page}

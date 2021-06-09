@@ -34,6 +34,7 @@ import {IUsersReducer} from '../reducers/usersReducers';
 import {IPhotoReducer} from '../reducers/photoReducers';
 import {ISingleUser} from '../entities/users';
 import { Icons } from '../common/Icons';
+import Colors from '../common/Colors';
 
 type GetUsers = ReturnType<typeof getUsers>
 type GetPhotos = ReturnType<typeof getPhotos>;
@@ -41,7 +42,7 @@ type GetPosts = ReturnType<typeof getPosts>;
 type GetComments = ReturnType<typeof getComments>;
 
 const Wrapper = styled.div`
- background-color: #f5f7f9;
+ background-color: ${Colors.bgGrey};
  height: 100vh;
  
 `;
@@ -49,7 +50,7 @@ const Content = styled.div`
  max-width: 900;
  display: flex;
  padding: 18px;
- background-color: #f5f7f9;
+ background-color: ${Colors.bgGrey};
 
 `;
 

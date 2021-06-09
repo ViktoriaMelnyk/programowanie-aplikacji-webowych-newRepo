@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FC, useState} from 'react';
 import Icons from '../../../common/Icons';
 import { WorkspacesWrapper, WorkspacesTitle } from '../WorkspacesSection/Workspaces.styles';
-import { CommentsWrapper, SelectorContainer, StyledOption, StyledSelect } from './CommentsSection.styles';
+import { CommentsTitle, CommentsWrapper, SelectorContainer, StyledOption, StyledSelect } from './CommentsSection.styles';
 import { SingleComment } from './SingleComment.component';
 import { useSelector } from 'react-redux';
 import { IState } from '../../../reducers';
@@ -71,6 +71,7 @@ export const Comments: FC<ICommentsUser>=props=>{
             )
             .map((comment) => (
                 <SingleComment
+                key= {comment.id}
                 title = {comment.name}
                 text = {comment.body}
                 companyName = {usersList?usersList[(comment.id - 1) % 10]?.company.name: ''}
@@ -86,11 +87,9 @@ export const Comments: FC<ICommentsUser>=props=>{
       return (
         <WorkspacesWrapper>
             <EntitiesHeader>
-              <EntitiesHeaderLeft>
-                <WorkspacesTitle>
+              <CommentsTitle>
                 Resume your work  
-              </WorkspacesTitle>
-              </EntitiesHeaderLeft>
+              </CommentsTitle>
             <EntitiesHeaderRight>
                 <Form>
                 <Input type="text" placeholder = "Search..." value={inputText} onChange={inputHandler}></Input>

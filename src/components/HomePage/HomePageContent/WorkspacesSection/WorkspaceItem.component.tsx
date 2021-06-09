@@ -1,6 +1,5 @@
 import React, {FC} from 'react';
 import { BgIcon, Content, MiniIcon, SmallContentInner, SmallIcon, SmallText,WorkspacesText, Update, Users, WorkspaceItemWrapper } from './Workspaces.styles'
-import {Link} from 'react-router-dom';
 interface IWorkspaceItemProps {
     BgimgUrl: string,
     IconUrl: string,

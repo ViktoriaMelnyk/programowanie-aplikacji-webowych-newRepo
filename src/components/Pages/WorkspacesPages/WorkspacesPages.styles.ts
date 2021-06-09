@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Colors from '../../common/Colors';
 
 export const MainWrapper = styled.div`
   max-width: 930px;
@@ -27,9 +28,9 @@ export const ItemContent =  styled.div`
 `;
 export const CorporateMattersWrapper = styled.div`
     width: 100%;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
     padding: 20px 15px;
-    background-color: #E7E7E7;
+    background-color: ${Colors.corporateDarkGrey};
     margin:20px 0;
 `;
 export const ItemImage =  styled('div')<{bgImg?: string}>`
@@ -59,7 +60,7 @@ export const HeaderText =  styled.div`
     color: #8D9196;
 `;
 export const HeaderWrapper =  styled.div`
-    box-shadow: 0 1px 1px #cdd0d7,0 1px 7px #cdd0d7, 0 5px 7px #cdd0d7 ;
+    box-shadow: 0 1px 1px ${Colors.boxShadow},0 1px 7px ${Colors.boxShadow}, 0 5px 7px ${Colors.boxShadow} ;
     margin-bottom: 40px;
 `;
 export const Banner=  styled(ItemImage)`

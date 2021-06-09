@@ -1,5 +1,4 @@
 import { Component } from 'react';
-
 import Icons from '../../../common/Icons';
 import {FilterInput, FiltersRow, FilterWrapper, TextWithPlus, TextWithX} from '../EntitiesPage.styles'
 

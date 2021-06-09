@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import Colors from '../../../common/Colors';
 
 export const PublicationsWrapper = styled.div`
     height: 300px;
     display: flex;
-    box-shadow: 0 8px 6px -6px #cdd0d7;
+    box-shadow: 0 8px 6px -6px ${Colors.boxShadow};
 `;
 export const BigPublicationWrapper = styled.div`
     width: 350px;
@@ -18,7 +19,7 @@ export const BigPublicationWrapper = styled.div`
 export const SmallPublicationsWrapper = styled.div`
     height: 300px;
     padding: 11px 20px;
-    background-color:#fff;
+    background-color:${Colors.white};
     p{
         margin:0;
         display: block;
@@ -26,7 +27,7 @@ export const SmallPublicationsWrapper = styled.div`
         font-weight: 500;
     }
     a{
-        color: #2a3f9d;
+        color: ${Colors.textBlue};
         font-weight: 500;
     }
 `;
@@ -48,7 +49,7 @@ export const BigPublicationText = styled.div`
     font-size: 16px;
 `;
 export const SmallPublicationText = styled.div`
-    color: #192136;
+    color: ${Colors.black};
     font-weight: 500;
 `;
 export const SmallPublImg = styled.div`
@@ -70,7 +71,7 @@ export const SmallPublicationsInner = styled.div`
 
 `;
 export const PublDate = styled.span`
-    color: #b4b7ba;
+    color: ${Colors.textLightGrey};
     margin-right: 5px;
 `;
 export const UserInfo = styled.div`

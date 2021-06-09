@@ -3,6 +3,7 @@ import { Li, UserBookmarks, UserImg } from '../../Aside/aside.style';
 import { Input } from '../styles';
 import Icons from '../../common/Icons'; 
 import { Link } from 'react-router-dom';
+import Colors from '../../common/Colors';
 
 export const Wrapper = styled.div`
     width: 260px;
@@ -13,9 +14,9 @@ export const Wrapper = styled.div`
     border-top:none;
     transition: all 0.7s;
     z-index: 1;
-    background-color: #fff;
+    background-color: ${Colors.white};
     align-items: center;
-    box-shadow: 0 8px 6px -6px 	#E8E8E8;
+    box-shadow: 0 8px 6px -6px 	${Colors.boxShadow};
 
 `;
 export const ScrollWrapper = styled.div`
@@ -24,7 +25,7 @@ export const ScrollWrapper = styled.div`
 `;
 
 export const CircleItem = styled.div`
-  background-color: #fff;
+  background-color: ${Colors.white};
   transition: all 0.3s;
   border: 0px solid #e0e0e0;
   border-left-width: 1px;
@@ -84,7 +85,7 @@ export const UserName = styled.div`
     padding:2px;
 `;
 export const SeeProfile = styled(Link)`
-    color:#7a87c2;
+    color:${Colors.textBlue};
     padding:2px;
 `;
 export const LogOut = styled.div`
@@ -92,8 +93,8 @@ export const LogOut = styled.div`
     display: flex;
     align-items: center;
     background-color: #fff;
-    border-bottom: 1px solid #e8e8e8;
-    border-top: 1px solid #e8e8e8;
+    border-bottom: 1px solid ${Colors.filterGrey};
+    border-top: 1px solid ${Colors.filterGrey};
     text-align: center;
     justify-content: center;
     color: #878b91;
